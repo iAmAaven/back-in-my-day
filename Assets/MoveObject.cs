@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingObject : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     public float speed = 10f; // Adjust the speed as needed
     public float minX = -11f; // Minimum X position
