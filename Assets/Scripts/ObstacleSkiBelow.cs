@@ -28,7 +28,7 @@ public class ObstaclesSkiBelow : MonoBehaviour
 
         GameObject newObject = Instantiate(objectPrefab[Random.Range(0, objectPrefab.Length)], randomPos, Quaternion.identity);
 
-        Destroy(newObject, 4f);
+        Destroy(newObject, 15f);
     }
 
     void OnDrawGizmosSelected()
