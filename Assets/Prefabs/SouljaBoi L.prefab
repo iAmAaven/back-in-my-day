@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5804097721380060400}
   - component: {fileID: 7080563958765563308}
   - component: {fileID: 4753569971341738695}
+  - component: {fileID: 1819370146534009670}
   m_Layer: 0
   m_Name: SouljaBoi L
   m_TagString: Untagged
@@ -112,3 +113,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1819370146534009670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154448408331084640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6c9f433bcad4640941b096ffa611da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
