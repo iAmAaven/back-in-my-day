@@ -31,7 +31,7 @@ public class ObstaclesSkiBelow : MonoBehaviour
 
         newObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5f);
 
-        Destroy(newObject, 7f);
+        Destroy(newObject, 4f);
     }
 
     void OnDrawGizmosSelected()

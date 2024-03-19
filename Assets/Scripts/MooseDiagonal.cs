@@ -43,7 +43,7 @@ public class MooseDiagonal : MonoBehaviour
             newObject.transform.localRotation = new Quaternion(0, 180, 0, 0);
         }
 
-        Destroy(newObject, 7f);
+        Destroy(newObject, 4f);
     }
 
     void OnDrawGizmosSelected()
