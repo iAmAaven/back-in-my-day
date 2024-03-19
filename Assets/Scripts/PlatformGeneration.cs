@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class PlatformGeneration : MonoBehaviour
 {
+    public float platformMoveSpeed;
     public float spawnRate;
     public GameObject platformPrefab;
     public Transform spawnPoint;
     public float spawnRadius;
 
-    private UniversalScrollerSpeed universalScrollerSpeed;
     private float timer = 0f;
-
-    void Start()
-    {
-        universalScrollerSpeed = FindObjectOfType<UniversalScrollerSpeed>();
-    }
 
     void Update()
     {
-        if (universalScrollerSpeed != null && Time.time >= timer)
+        if (Time.time >= timer)
         {
             SpawnPlatform();
             timer = Time.time + spawnRate;
@@ -34,9 +29,7 @@ public class PlatformGeneration : MonoBehaviour
 
         GameObject newPlatform = Instantiate(platformPrefab, randomPos, Quaternion.identity);
 
-        newPlatform.GetComponent<Rigidbody2D>().velocity = new Vector2(-universalScrollerSpeed.universalSpeed, 0);
-
-        Destroy(newPlatform, 7f);
+        newPlatform.GetComponent<Rigidbody2D>().velocity = new Vector2(-platformMoveSpeed, 0);
     }
 
     void OnDrawGizmosSelected()
