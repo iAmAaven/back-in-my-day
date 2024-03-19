@@ -40,7 +40,6 @@ public class MooseDiagonal : MonoBehaviour
         {
             newAnimal.transform.localRotation = new Quaternion(0, 180, 0, 0);
         }
-
         Destroy(newAnimal, 4f);
     }
 
