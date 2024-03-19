@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class JungleMovement : MonoBehaviour
 {
+    [Header("Stats")]
     public float moveSpeed;
     public float jumpForce;
     [Header("Ground detection")]
-    public float groundDetectionRadius;
+    public Vector2 groundDetectionRadius;
     public Transform feetPos;
     public LayerMask whatIsGround;
+    [Header("References")]
+    public Transform playerGFX;
+    public Transform playerCenter;
+    public Animator gfxAnim;
 
     // PRIVATES
     private Rigidbody2D rb;
@@ -21,7 +26,7 @@ public class JungleMovement : MonoBehaviour
     }
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, groundDetectionRadius, whatIsGround);
+        isGrounded = Physics2D.OverlapBox(feetPos.position, groundDetectionRadius, 0, whatIsGround);
         movement = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -32,11 +37,35 @@ public class JungleMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
+
+        if (isGrounded)
+        {
+            gfxAnim.SetBool("IsJumping", false);
+        }
+        else
+        {
+            gfxAnim.SetBool("IsJumping", true);
+        }
+
+        // if (movement < 0)
+        // {
+        //     playerGFX.localEulerAngles = new Vector3(0, 180, 0);
+        // }
+        // else if (movement > 0)
+        // {
+        //     playerGFX.localEulerAngles = new Vector3(0, 0, 0);
+        // }
     }
 
     void FixedUpdate()
     {
         float speed = moveSpeed * movement;
         rb.velocity = new Vector2(speed, rb.velocity.y);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(feetPos.position, groundDetectionRadius);
     }
 }
