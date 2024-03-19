@@ -483,10 +483,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 10
-  deceleration: 20
-  maxSpeed: 10
+  deceleration: 10
+  maxSpeed: 6
   playerAnim: {fileID: 1839134816}
-  playerGraphics: {fileID: 6545455574344268563}
+  playerGraphics: {fileID: 1839134815}
 --- !u!50 &1839134818
 Rigidbody2D:
   serializedVersion: 4
