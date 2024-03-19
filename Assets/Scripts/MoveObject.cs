@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MovingObject : MonoBehaviour
+public class MoveObject : MonoBehaviour
 {
     public float acceleration = 10f; // Adjust the acceleration rate
     public float deceleration = 20f; // Adjust the deceleration rate
@@ -9,10 +9,22 @@ public class MovingObject : MonoBehaviour
     public Transform playerGraphics;
 
     private Rigidbody2D rb;
+    private UniversalScrollerSpeed universalScrollerSpeed;
+    private float originalSpeed;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        universalScrollerSpeed = FindObjectOfType<UniversalScrollerSpeed>();
+
+        if (universalScrollerSpeed != null)
+        {
+            originalSpeed = universalScrollerSpeed.universalSpeed;
+        }
+        else
+        {
+            Debug.LogError("UNIVERSAL SCROLLER NOT FOUND!");
+        }
     }
 
     private void Update()
@@ -29,24 +41,29 @@ public class MovingObject : MonoBehaviour
         // Apply the movement to Rigidbody2D velocity
         rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
 
-        Debug.Log(moveHorizontal);
+        if (Input.GetButtonDown("Up"))
+        {
+            universalScrollerSpeed.universalSpeed = originalSpeed / 2;
+        }
+        else if (Input.GetButtonUp("Up"))
+        {
+            universalScrollerSpeed.universalSpeed = originalSpeed;
+        }
 
-        if(moveHorizontal != 0)
+        if (moveHorizontal > 0.1f || moveHorizontal < -0.1f)
         {
             playerAnim.SetBool("isTurning", true);
         }
-
         else
-        { 
-            playerAnim.SetBool("isTurning", false); 
+        {
+            playerAnim.SetBool("isTurning", false);
         }
 
-        if(moveHorizontal < 0)
+        if (moveHorizontal < 0)
         {
             playerGraphics.localRotation = new Quaternion(0, 180, 0, 0);
         }
-
-        else if( moveHorizontal > 0)
+        else if (moveHorizontal > 0)
         {
             playerGraphics.localRotation = new Quaternion(0, 0, 0, 0);
         }

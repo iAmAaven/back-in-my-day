@@ -11,7 +11,6 @@ public class MooseDiagonal : MonoBehaviour
     public float direction;
     public float spawnRadius;
 
-    private UniversalScrollerSpeed universalScrollerSpeed;
     private float timer = 0f;
 
     void Update()
@@ -29,21 +28,19 @@ public class MooseDiagonal : MonoBehaviour
         float randomYpos = spawnPoint.position.y + Random.Range(-spawnRadiusHalved, spawnRadiusHalved);
         Vector3 randomPos = new Vector3(spawnPoint.position.x, randomYpos, 0);
 
-        GameObject newObject = Instantiate(objectPrefab[Random.Range(0, objectPrefab.Length)], randomPos, Quaternion.identity);
+        GameObject newAnimal = Instantiate(objectPrefab[Random.Range(0, objectPrefab.Length)], randomPos, Quaternion.identity);
+        newAnimal.GetComponent<SkiAnimal>().moveDirection = direction;
 
-        newObject.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * direction, 5f);
-
-        if(direction < 0)
+        if (direction < 0)
         {
-            newObject.transform.localRotation = new Quaternion(0, 0, 0, 0); 
+            newAnimal.transform.localRotation = new Quaternion(0, 0, 0, 0);
         }
 
         else
         {
-            newObject.transform.localRotation = new Quaternion(0, 180, 0, 0);
+            newAnimal.transform.localRotation = new Quaternion(0, 180, 0, 0);
         }
-
-        Destroy(newObject, 4f);
+        Destroy(newAnimal, 4f);
     }
 
     void OnDrawGizmosSelected()

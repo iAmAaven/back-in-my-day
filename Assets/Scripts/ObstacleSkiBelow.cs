@@ -9,7 +9,6 @@ public class ObstaclesSkiBelow : MonoBehaviour
     public Transform spawnPoint;
     public float spawnRadius;
 
-    private UniversalScrollerSpeed universalScrollerSpeed;
     private float timer = 0f;
 
     void Update()
@@ -28,8 +27,6 @@ public class ObstaclesSkiBelow : MonoBehaviour
         Vector3 randomPos = new Vector3(randomXpos, spawnPoint.position.y, 0);
 
         GameObject newObject = Instantiate(objectPrefab[Random.Range(0, objectPrefab.Length)], randomPos, Quaternion.identity);
-
-        newObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5f);
 
         Destroy(newObject, 4f);
     }
