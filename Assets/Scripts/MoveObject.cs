@@ -8,6 +8,7 @@ public class MoveObject : MonoBehaviour
     public Animator playerAnim;
     public Transform playerGraphics;
 
+
     private Rigidbody2D rb;
     private UniversalScrollerSpeed universalScrollerSpeed;
     private float originalSpeed;
