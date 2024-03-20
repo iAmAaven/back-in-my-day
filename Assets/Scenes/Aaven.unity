@@ -314,7 +314,7 @@ MonoBehaviour:
   orderInLayer: -1
   sortingLayer: Background
   layerSpeed: 1
-  brightness: 0.5
+  brightness: 0.34
 --- !u!1 &113411129
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 683778504}
   - component: {fileID: 683778503}
   m_Layer: 0
-  m_Name: BackgroundWhite
+  m_Name: BackgroundBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -851,7 +851,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: -10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.17735851, g: 0.17735851, b: 0.17735851, a: 1}
+  m_Color: {r: 0.14716971, g: 0.14716971, b: 0.14716971, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -992,7 +992,7 @@ MonoBehaviour:
   orderInLayer: 2
   sortingLayer: Background
   layerSpeed: 7
-  brightness: 1
+  brightness: 0.817
 --- !u!1 &1270791840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   orderInLayer: 0
   sortingLayer: Background
   layerSpeed: 2
-  brightness: 0.75
+  brightness: 0.468
 --- !u!1 &1337770521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,7 +1798,38 @@ MonoBehaviour:
   orderInLayer: 1
   sortingLayer: Background
   layerSpeed: 4
-  brightness: 0.85
+  brightness: 0.602
+--- !u!1 &1921030274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1921030275}
+  m_Layer: 0
+  m_Name: HotAirBalloonEnemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1921030275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921030274}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8, y: 2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3036143283764550106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1856,63 +1887,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19eec06e24a526348a1c4923fb93cd69, type: 3}
---- !u!1001 &7426018153218855502
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3327319037184195674, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
-      propertyPath: m_Name
-      value: SnowStorm
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1929,4 +1903,4 @@ SceneRoots:
   - {fileID: 443209778}
   - {fileID: 1733520716}
   - {fileID: 127675190}
-  - {fileID: 7426018153218855502}
+  - {fileID: 1921030275}
