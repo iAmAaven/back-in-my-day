@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkiAnimal : MonoBehaviour
+public class SouljaBullet : MonoBehaviour
 {
-    private float moveSpeed = 5f;
-    public float moveDirection;
     private Rigidbody2D rb;
     private UniversalScrollerSpeed universalScrollerSpeed;
+    private float moveSpeed = 5f;
+    public float moveDirection;
 
     void Start()
     {
@@ -24,6 +24,7 @@ public class SkiAnimal : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             Debug.Log("Player took damage");
+            Destroy(gameObject);
         }
     }
 }
