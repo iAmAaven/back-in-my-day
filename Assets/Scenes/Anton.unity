@@ -687,7 +687,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0beaca312883142a4bdd7b25951547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 2581939559312308220, guid: 86b5ff047c907da48bfd4ecee9e23abc, type: 3}
+  obstaclePrefab:
+  - {fileID: 9197880219386168654, guid: eddb863321f9d86468c300212d6da147, type: 3}
+  - {fileID: 9197880219386168654, guid: eddb863321f9d86468c300212d6da147, type: 3}
+  - {fileID: 9197880219386168654, guid: eddb863321f9d86468c300212d6da147, type: 3}
   spawnInterval: 3
   minSpawnY: -3
   maxSpawnY: 3
