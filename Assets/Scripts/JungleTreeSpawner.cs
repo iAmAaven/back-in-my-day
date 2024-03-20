@@ -11,6 +11,7 @@ public class JungleTreeSpawner : MonoBehaviour
     public int orderInLayer;
     public string sortingLayer;
     public float layerSpeed;
+    [Range(0f, 1f)] public float brightness;
 
     private float timer = 0f;
 
@@ -19,7 +20,7 @@ public class JungleTreeSpawner : MonoBehaviour
         if (Time.time >= timer)
         {
             SpawnTree();
-            timer = Time.time + spawnRate + Random.Range(-2f, 2f);
+            timer = Time.time + spawnRate + Random.Range(-spawnRate / 2, spawnRate / 2);
         }
     }
 
@@ -35,5 +36,6 @@ public class JungleTreeSpawner : MonoBehaviour
         SpriteRenderer treeSprite = newTree.GetComponentInChildren<SpriteRenderer>();
         treeSprite.sortingOrder = orderInLayer;
         treeSprite.sortingLayerName = sortingLayer;
+        treeSprite.color = new Color(brightness, brightness, brightness, 1f);
     }
 }

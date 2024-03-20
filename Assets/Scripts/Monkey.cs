@@ -63,6 +63,14 @@ public class Monkey : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Machete")
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void ThrowObject()
     {
         GameObject newObject = Instantiate(throwableObjects[Random.Range(0, throwableObjects.Length)], throwPoint.position, Quaternion.identity);
