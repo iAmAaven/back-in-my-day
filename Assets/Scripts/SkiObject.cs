@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SkiObject : MonoBehaviour
 {
+    public int damageAmount = 1; // Amount of damage this object deals
     private Rigidbody2D rb;
     private UniversalScrollerSpeed universalScrollerSpeed;
 
@@ -22,6 +23,7 @@ public class SkiObject : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             Debug.Log("Player took damage");
+            collider.gameObject.GetComponent<PlayerHP>().TakeDamage(damageAmount);
                 Destroy(gameObject); 
         }
     }
