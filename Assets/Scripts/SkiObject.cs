@@ -16,4 +16,13 @@ public class SkiObject : MonoBehaviour
     {
         rb.velocity = new Vector2(0, universalScrollerSpeed.universalSpeed);
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "Player")
+        {
+            Debug.Log("Player took damage");
+                Destroy(gameObject); 
+        }
+    }
 }
