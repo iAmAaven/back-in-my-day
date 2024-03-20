@@ -304,8 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b8c160f1f00e4408c3f50b1d79eba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 0.4
-  maxScale: 1.2
+  minScale: 1
+  maxScale: 2
   treePrefabs:
   - {fileID: 6877619209311498359, guid: 21cacae3a7cba584b961da60b2031c4d, type: 3}
   - {fileID: 850187325570376797, guid: b646c8fca5ba3ce489e054b5fd3d2f08, type: 3}
@@ -314,6 +314,7 @@ MonoBehaviour:
   orderInLayer: -1
   sortingLayer: Background
   layerSpeed: 1
+  brightness: 0.5
 --- !u!1 &113411129
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +346,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 443209778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &127675189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 127675190}
+  - component: {fileID: 127675191}
+  m_Layer: 0
+  m_Name: CarniPlantSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &127675190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127675189}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1028787357}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &127675191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127675189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53687d66d5371b74a91462729a9ffd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 1028787357}
+  spawnRate: 6
+  carniPlantPrefab: {fileID: 6538732770952967874, guid: 9df0d48622df91c40ac730975faabd86, type: 3}
 --- !u!1 &240047064
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +851,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: -10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6301887, g: 0.6301887, b: 0.6301887, a: 1}
+  m_Color: {r: 0.17735851, g: 0.17735851, b: 0.17735851, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -858,6 +907,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 443209778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1028787356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1028787357}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1028787357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028787356}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12, y: -4.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 127675190}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1258517175
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,10 +988,11 @@ MonoBehaviour:
   - {fileID: 6877619209311498359, guid: 21cacae3a7cba584b961da60b2031c4d, type: 3}
   - {fileID: 850187325570376797, guid: b646c8fca5ba3ce489e054b5fd3d2f08, type: 3}
   spawnPoint: {fileID: 1641976891}
-  spawnRate: 3
+  spawnRate: 2
   orderInLayer: 2
   sortingLayer: Background
   layerSpeed: 7
+  brightness: 1
 --- !u!1 &1270791840
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,8 +1037,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b8c160f1f00e4408c3f50b1d79eba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 0.6
-  maxScale: 1.5
+  minScale: 1
+  maxScale: 2
   treePrefabs:
   - {fileID: 6877619209311498359, guid: 21cacae3a7cba584b961da60b2031c4d, type: 3}
   - {fileID: 850187325570376797, guid: b646c8fca5ba3ce489e054b5fd3d2f08, type: 3}
@@ -966,6 +1047,7 @@ MonoBehaviour:
   orderInLayer: 0
   sortingLayer: Background
   layerSpeed: 2
+  brightness: 0.75
 --- !u!1 &1337770521
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,7 +1073,7 @@ Transform:
   m_GameObject: {fileID: 1337770521}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: -0.5, z: 0}
+  m_LocalPosition: {x: 15, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1047,10 +1129,11 @@ MonoBehaviour:
   - {fileID: 6877619209311498359, guid: 21cacae3a7cba584b961da60b2031c4d, type: 3}
   - {fileID: 850187325570376797, guid: b646c8fca5ba3ce489e054b5fd3d2f08, type: 3}
   spawnPoint: {fileID: 1641976891}
-  spawnRate: 3
+  spawnRate: 2
   orderInLayer: 0
   sortingLayer: Foreground
   layerSpeed: 8
+  brightness: 1
 --- !u!1 &1381399438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,7 +1274,7 @@ Transform:
   m_GameObject: {fileID: 1641976890}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: -5.5, z: 0}
+  m_LocalPosition: {x: 15, y: -5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1705,16 +1788,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b8c160f1f00e4408c3f50b1d79eba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 0.8
-  maxScale: 1.7
+  minScale: 1
+  maxScale: 2
   treePrefabs:
   - {fileID: 6877619209311498359, guid: 21cacae3a7cba584b961da60b2031c4d, type: 3}
   - {fileID: 850187325570376797, guid: b646c8fca5ba3ce489e054b5fd3d2f08, type: 3}
   spawnPoint: {fileID: 1641976891}
-  spawnRate: 3
+  spawnRate: 2
   orderInLayer: 1
   sortingLayer: Background
   layerSpeed: 4
+  brightness: 0.85
 --- !u!1001 &3036143283764550106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1772,6 +1856,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19eec06e24a526348a1c4923fb93cd69, type: 3}
+--- !u!1001 &7426018153218855502
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 179798310390748095, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327319037184195674, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
+      propertyPath: m_Name
+      value: SnowStorm
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d9a57c0f4ab8f84c90c42803079e942, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1787,3 +1928,5 @@ SceneRoots:
   - {fileID: 1539033671}
   - {fileID: 443209778}
   - {fileID: 1733520716}
+  - {fileID: 127675190}
+  - {fileID: 7426018153218855502}

@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 2390815730100930739}
   - component: {fileID: 2057992184820732240}
   - component: {fileID: 4349628095868597927}
+  - component: {fileID: 6151398472451972561}
   m_Layer: 0
   m_Name: SideMonkey
   m_TagString: Untagged
@@ -166,8 +167,9 @@ MonoBehaviour:
   throwableObjects:
   - {fileID: 9197880219386168654, guid: eddb863321f9d86468c300212d6da147, type: 3}
   throwingTimer: 3
-  throwSpeed: 7
+  throwSpeed: 15
   isTopMonkey: 0
+  timeToFirstAttack: 1
   monkeyGFX: {fileID: 5461827770779539667}
   throwPoint: {fileID: 5751840205758476253}
   stopPoint: {fileID: 0}
@@ -198,3 +200,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &6151398472451972561
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040316492245399194}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
