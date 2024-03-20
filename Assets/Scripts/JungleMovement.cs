@@ -15,6 +15,7 @@ public class JungleMovement : MonoBehaviour
     public Transform playerGFX;
     public Transform playerCenter;
     public Animator gfxAnim;
+    public AudioSource ridingMoose;
 
     // PRIVATES
     private Rigidbody2D rb;
@@ -40,10 +41,12 @@ public class JungleMovement : MonoBehaviour
 
         if (isGrounded)
         {
+            ridingMoose.UnPause();
             gfxAnim.SetBool("IsJumping", false);
         }
         else
         {
+            ridingMoose.Pause();
             gfxAnim.SetBool("IsJumping", true);
         }
 
