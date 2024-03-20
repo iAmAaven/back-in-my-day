@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2172a5487685cf44484399a8f7fa3736
+guid: 908ac036680df104c9db11264a2debb9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Beer_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 236.5
+        width: 355
+        height: 236.5
+      alignment: 9
+      pivot: {x: 0.5, y: 0.14}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90b22fbd31e4274fb62ef2eadf4957d
+      internalID: -2052361958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beer_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 355
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccff39ecba0cc044b0d025a77798cda
+      internalID: -515174161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +148,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Beer_0: -2052361958
+      Beer_1: -515174161
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

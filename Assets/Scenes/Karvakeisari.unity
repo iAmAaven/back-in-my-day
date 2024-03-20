@@ -489,6 +489,7 @@ MonoBehaviour:
   spawnRate: 10
   objectPrefab:
   - {fileID: 1653715391820325095, guid: f08e14b01ebd698428150a20c3f5f515, type: 3}
+  - {fileID: 6787774358230760230, guid: fd24d12d3c131f742a7a54240696b931, type: 3}
   spawnPoint: {fileID: 1935615852}
   speed: 5
   direction: -1
@@ -665,6 +666,7 @@ MonoBehaviour:
   spawnRate: 10
   objectPrefab:
   - {fileID: 1653715391820325095, guid: f08e14b01ebd698428150a20c3f5f515, type: 3}
+  - {fileID: 6787774358230760230, guid: fd24d12d3c131f742a7a54240696b931, type: 3}
   spawnPoint: {fileID: 521754803}
   speed: 5
   direction: 1
@@ -835,9 +837,10 @@ GameObject:
   - component: {fileID: 1839134816}
   - component: {fileID: 1839134817}
   - component: {fileID: 1839134818}
+  - component: {fileID: 1839134819}
   m_Layer: 0
   m_Name: Skier
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -923,6 +926,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!70 &1839134819
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839134813}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.77}
+  m_Size: {x: 0.8403332, y: 1.55}
+  m_Direction: 0
 --- !u!1 &1935615851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,7 +1119,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6545455574344268563}
   - component: {fileID: 4290039058965354830}
-  - component: {fileID: 7936591620006573117}
   - component: {fileID: 7936591620006573118}
   m_Layer: 0
   m_Name: Graphix
@@ -1090,51 +1127,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &7936591620006573117
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7936591620006573115}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.15}
-    oldSize: {x: 2.37, y: 2.3633332}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!95 &7936591620006573118
 Animator:
   serializedVersion: 5
