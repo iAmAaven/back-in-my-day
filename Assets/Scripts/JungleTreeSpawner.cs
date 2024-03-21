@@ -14,9 +14,18 @@ public class JungleTreeSpawner : MonoBehaviour
     [Range(0f, 1f)] public float brightness;
 
     private float timer = 0f;
+    private JungleTutorial jungleTutorial;
+
+    void Start()
+    {
+        jungleTutorial = FindObjectOfType<JungleTutorial>();
+    }
 
     void Update()
     {
+        if (jungleTutorial.isTutorialOn)
+            return;
+
         if (Time.time >= timer)
         {
             SpawnTree();

@@ -19,13 +19,30 @@ public class MonkeySpawner : MonoBehaviour
 
     // PRIVATES
     private float timer = 0f;
+    private JungleTutorial jungleTutorial;
+    private bool firstSpawn = false;
+
+    void Start()
+    {
+        jungleTutorial = FindObjectOfType<JungleTutorial>();
+    }
 
     void Update()
     {
-        if (Time.time >= timer)
+        if (jungleTutorial.isTutorialOn)
+            return;
+
+        if (firstSpawn && Time.time >= timer)
         {
             SpawnMonkey();
             timer = Time.time + spawnRate;
+        }
+        else if (firstSpawn == false)
+        {
+            float randomTime = Random.Range(3f, 6f);
+            Invoke("SpawnMonkey", randomTime);
+            timer = Time.time + 10f;
+            firstSpawn = true;
         }
     }
 
@@ -44,7 +61,7 @@ public class MonkeySpawner : MonoBehaviour
             float halvedRadius = spawnRadiusY / 2;
             Vector2 randomPos = new Vector2(sideSpawnPoint.position.x, Random.Range(-halvedRadius, halvedRadius));
 
-            GameObject newMonkey = Instantiate(sideMonkeyPrefab, randomPos, Quaternion.identity, transform);
+            GameObject newMonkey = Instantiate(sideMonkeyPrefab, randomPos, sideMonkeyPrefab.transform.localRotation, transform);
             newMonkey.GetComponent<Monkey>().stopPoint = sideStopPoint;
         }
     }

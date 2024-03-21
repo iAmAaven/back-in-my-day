@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Machete
   - OneHitEnemy
+  - OneShotAudio
   layers:
   - Default
   - TransparentFX

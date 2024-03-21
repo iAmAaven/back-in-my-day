@@ -114,7 +114,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.75, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4403703989203814376}
@@ -181,6 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToPlayer: 1
+  audioClips:
+  - {fileID: 8300000, guid: 2693a9f0c7da2fd4888caf7abe7d49d8, type: 3}
+  - {fileID: 8300000, guid: de982fc92ef9c114c9af02d50d259a0d, type: 3}
 --- !u!58 &804874370384410748
 CircleCollider2D:
   m_ObjectHideFlags: 0

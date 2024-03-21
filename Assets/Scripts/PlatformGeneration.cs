@@ -11,9 +11,18 @@ public class PlatformGeneration : MonoBehaviour
     public float spawnRadius;
 
     private float timer = 0f;
+    private JungleTutorial jungleTutorial;
+
+    void Start()
+    {
+        jungleTutorial = FindObjectOfType<JungleTutorial>();
+    }
 
     void Update()
     {
+        if (jungleTutorial.isTutorialOn)
+            return;
+
         if (Time.time >= timer)
         {
             SpawnPlatform();

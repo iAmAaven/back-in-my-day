@@ -21,14 +21,27 @@ public class JungleMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float movement;
     private bool isGrounded = false;
+    private JungleTutorial jungleTutorial;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        jungleTutorial = FindObjectOfType<JungleTutorial>();
     }
+
     void Update()
     {
         isGrounded = Physics2D.OverlapBox(feetPos.position, groundDetectionRadius, 0, whatIsGround);
         movement = Input.GetAxisRaw("Horizontal");
+
+        if (jungleTutorial.isTutorialOn)
+        {
+            gfxAnim.SetBool("IsIdling", true);
+            return;
+        }
+        else
+        {
+            gfxAnim.SetBool("IsIdling", false);
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -41,7 +54,14 @@ public class JungleMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            ridingMoose.UnPause();
+            if (ridingMoose.isPlaying)
+            {
+                ridingMoose.UnPause();
+            }
+            else
+            {
+                ridingMoose.Play();
+            }
             gfxAnim.SetBool("IsJumping", false);
         }
         else
@@ -62,6 +82,9 @@ public class JungleMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (jungleTutorial.isTutorialOn)
+            return;
+
         float speed = moveSpeed * movement;
         rb.velocity = new Vector2(speed, rb.velocity.y);
     }

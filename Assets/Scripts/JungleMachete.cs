@@ -6,6 +6,8 @@ public class JungleMachete : MonoBehaviour
 {
     public float attackRate;
     public Animator macheteAnim;
+    public AudioSource macheteAudioSource;
+    public AudioClip[] macheteClips;
 
     private float timer = 0f;
 
@@ -21,6 +23,7 @@ public class JungleMachete : MonoBehaviour
 
     void Attack()
     {
+        macheteAudioSource.PlayOneShot(macheteClips[Random.Range(0, macheteClips.Length)]);
         macheteAnim.SetTrigger("Attack");
     }
 }

@@ -6,11 +6,20 @@ public class CarniPlantSpawner : MonoBehaviour
 {
     public Transform spawnPoint;
     public float spawnRate;
-    public GameObject carniPlantPrefab;
+    public GameObject[] plantPrefabs;
     private float timer = 0f;
+    private JungleTutorial jungleTutorial;
+
+    void Start()
+    {
+        jungleTutorial = FindObjectOfType<JungleTutorial>();
+    }
 
     void Update()
     {
+        if (jungleTutorial.isTutorialOn)
+            return;
+
         if (Time.time >= timer)
         {
             SpawnCarniPlant();
@@ -20,6 +29,6 @@ public class CarniPlantSpawner : MonoBehaviour
 
     void SpawnCarniPlant()
     {
-        Instantiate(carniPlantPrefab, spawnPoint.position, Quaternion.identity, transform);
+        Instantiate(plantPrefabs[Random.Range(0, plantPrefabs.Length)], spawnPoint.position, Quaternion.identity, transform);
     }
 }
