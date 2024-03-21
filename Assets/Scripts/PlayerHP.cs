@@ -6,6 +6,7 @@ public class PlayerHP : MonoBehaviour
 {
     public int maxHealth = 5; // Maximum health points
     public int currentHealth; // Current health points
+    public GameObject deadPlayerPrefab;
     public SpriteRenderer playerGraphics;
     private bool isAughFrames = false;
 
@@ -20,7 +21,7 @@ public class PlayerHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Function to deal damage to the player
@@ -45,8 +46,11 @@ public class PlayerHP : MonoBehaviour
     {
         // Implement player death behavior here
         Debug.Log("Player died");
+        Camera.main.GetComponent<AudioListener>().enabled = true;
+        FindObjectOfType<LevelHandler>().LevelGameOver();
+        Instantiate(deadPlayerPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
         // You can reset player position, show game over screen, etc.
-
     }
 
     IEnumerator AughFrames()
