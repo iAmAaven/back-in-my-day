@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class UFO : MonoBehaviour
 {
+    public float moveToPointSpeed;
     public float followSpeed;
     public float attackEverySec = 10f, attackCooldown = 5f;
     public float firstAttackAfterSec = 4f;
+    public Transform stopPoint;
     private Transform playerPos;
     public Animator ufoAnim;
 
     private bool isAttacking = false;
     private bool waitedForFirstAttack = false;
     private float timer = 0f;
+    private Rigidbody2D rb;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         playerPos = GameObject.FindWithTag("Player").transform;
     }
 
@@ -36,6 +40,18 @@ public class UFO : MonoBehaviour
             {
                 waitedForFirstAttack = true;
             }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (transform.position.x - stopPoint.position.x > 0.01f)
+        {
+            rb.velocity = Vector2.left * moveToPointSpeed;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
         }
     }
 
