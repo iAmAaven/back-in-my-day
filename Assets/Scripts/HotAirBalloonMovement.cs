@@ -16,7 +16,7 @@ public class HotAirBalloonMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Check for input to move the balloon up
         if (Input.GetKey(KeyCode.Space) && rb.velocity.y <= terminalvelocity)
