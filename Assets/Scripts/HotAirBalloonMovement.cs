@@ -8,6 +8,7 @@ public class HotAirBalloonMovement : MonoBehaviour
     public float downForce = 5f; // Force applied when going down
 
     public float terminalvelocity = 20f;
+    public Animator balloonAnim;
 
     private Rigidbody2D rb;
 
@@ -19,9 +20,15 @@ public class HotAirBalloonMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Check for input to move the balloon up
-        if (Input.GetKey(KeyCode.Space) && rb.velocity.y <= terminalvelocity)
+        if (Input.GetButton("Up") && rb.velocity.y <= terminalvelocity)
         {
-            rb.AddForce(Vector2.up * upForce, ForceMode2D.Force);
+            rb.velocity = Vector2.up * upForce;
+            balloonAnim.SetBool("IsRising", true);
+        }
+
+        if (Input.GetButtonUp("Up"))
+        {
+            balloonAnim.SetBool("IsRising", false);
         }
     }
 }
