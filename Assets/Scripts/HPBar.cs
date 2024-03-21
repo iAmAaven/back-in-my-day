@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class HPBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject[] hearts;
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateHPBar()
     {
-        
+        foreach (GameObject heart in hearts)
+        {
+            heart.SetActive(true);
+        }
     }
 }

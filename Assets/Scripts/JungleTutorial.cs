@@ -11,6 +11,7 @@ public class JungleTutorial : MonoBehaviour
     {
         if (isTutorialOn && Input.GetButtonDown("Jump"))
         {
+            FindObjectOfType<DistanceCounter>().isPlaying = true;
             tutorialCanvas.SetActive(false);
             isTutorialOn = false;
         }

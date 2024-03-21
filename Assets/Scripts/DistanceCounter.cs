@@ -11,19 +11,11 @@ public class DistanceCounter : MonoBehaviour
     public TextMeshProUGUI distanceText;
 
     private float timer = 0f;
-    private JungleTutorial jungleTutorial;
-
-    void Start()
-    {
-        jungleTutorial = FindObjectOfType<JungleTutorial>();
-    }
+    [HideInInspector] public bool isPlaying = false;
 
     void Update()
     {
-        if (jungleTutorial.isTutorialOn)
-            return;
-
-        if (Time.time >= timer)
+        if (Time.time >= timer && isPlaying)
         {
             TakeDistance();
             timer = Time.time + distanceEverySec;

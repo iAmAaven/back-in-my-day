@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e625d0a970439e4c87e21b3cafcd439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previousSceneName: Aaven
+  previousSceneName: Anton
 --- !u!1 &1930594102
 GameObject:
   m_ObjectHideFlags: 0

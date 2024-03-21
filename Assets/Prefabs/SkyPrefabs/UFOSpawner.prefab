@@ -50,7 +50,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 8816231794645677387}
   sideStopPoint: {fileID: 8109171093866485010}
   spawnRate: 7
-  spawnRadius: 6
+  spawnRadius: 8
   ufoFound: 0
 --- !u!1 &5800040040099488549
 GameObject:

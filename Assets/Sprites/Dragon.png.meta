@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b38b0f721d6ebea479c3f60c86c77819
+guid: abf841b9c56b8ff48b2f23e9108ca91c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Birb_0
+      name: Dragon_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 200
-        width: 200
-        height: 200
+        y: 1000
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca099eb45000e1049b69ed1d04cb3a2f
-      internalID: -1157644052
+      spriteID: ac6a24c35bd835447b2fded6b8af2a76
+      internalID: -2090131449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Birb_1
+      name: Dragon_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
-        height: 200
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfdb14aed89ed9a4cba11c0fc343e46a
-      internalID: 390819586
+      spriteID: 35a398b31923fdf40b74b4870a5d23a4
+      internalID: 1497759590
       vertices: []
       indices: 
       edges: []
@@ -149,8 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Birb_0: -1157644052
-      Birb_1: 390819586
+      Dragon_0: -2090131449
+      Dragon_1: 1497759590
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

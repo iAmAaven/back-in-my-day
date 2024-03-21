@@ -339,7 +339,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 70675c71722ff364b8f0fa9fda1b65a4, type: 3}
-  m_Color: {r: 0.6377357, g: 0.6377357, b: 0.6377357, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -458,6 +458,7 @@ GameObject:
   - component: {fileID: 864141092259001892}
   - component: {fileID: 3874134389612553582}
   - component: {fileID: 2001222926394948248}
+  - component: {fileID: 4516241518771349759}
   m_Layer: 0
   m_Name: UFO
   m_TagString: Untagged
@@ -495,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveToPointSpeed: 5
-  followSpeed: 4
+  followSpeed: 3
   attackEverySec: 10
   attackCooldown: 3.5
   firstAttackAfterSec: 4
@@ -581,6 +582,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.10425544, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7710637
+--- !u!114 &4516241518771349759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9132687016571509831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 092655ab8ae2ea24ca9bfb6d6e594f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHitPoints: 25
