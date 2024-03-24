@@ -4,13 +4,46 @@ using UnityEngine;
 
 public class ObstaclesSkiBelow : MonoBehaviour
 {
-    public float spawnRate;
+    public float spawnRate, easySpawnRate, normalSpawnRate, highSpawnRate;
     public GameObject[] objectPrefab;
     public Transform spawnPoint;
     public float spawnRadius;
+    public bool enableRandomSpawn = false;
+    [HideInInspector] public float startSpawnRate;
 
     private float timer = 0f;
 
+    void Start()
+    {
+        if (PlayerPrefs.GetString("Difficulty") != null)
+        {
+            switch (PlayerPrefs.GetString("Difficulty"))
+            {
+                case "easy":
+                    spawnRate = easySpawnRate;
+                    break;
+                case "normal":
+                    spawnRate = normalSpawnRate;
+                    break;
+                case "hard":
+                    spawnRate = highSpawnRate;
+                    break;
+                case "godlike":
+                    spawnRate = highSpawnRate;
+                    break;
+            }
+
+            Debug.Log("Obstacle and soulja spawn rate set from PlayerPrefs: " + spawnRate);
+        }
+        startSpawnRate = spawnRate;
+
+        timer = Time.time + spawnRate - 1f;
+
+        if (enableRandomSpawn)
+        {
+            timer = Time.time + spawnRate - Random.Range(-1f, 1f);
+        }
+    }
     void Update()
     {
         if (Time.time >= timer)

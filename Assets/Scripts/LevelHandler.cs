@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelHandler : MonoBehaviour
 {
     public string nextSceneName, gameOverSceneName;
+    public float levelOverTimer = 2f;
+    public bool levelHasBeenCompleted = false;
     public GameObject fadeToBlack, fadeIn;
 
     void Start()
@@ -19,14 +21,15 @@ public class LevelHandler : MonoBehaviour
     }
     public void LevelEnd()
     {
+        levelHasBeenCompleted = true;
         fadeToBlack.SetActive(true);
-        Invoke("LoadNextScene", 4f);
+        Invoke("LoadNextScene", levelOverTimer);
     }
 
     public void LevelGameOver()
     {
         fadeToBlack.SetActive(true);
-        Invoke("GameOverTimer", 4f);
+        Invoke("GameOverTimer", levelOverTimer);
     }
 
     void LoadNextScene()

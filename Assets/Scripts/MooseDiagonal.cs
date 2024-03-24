@@ -4,21 +4,48 @@ using UnityEngine;
 
 public class MooseDiagonal : MonoBehaviour
 {
-    public float spawnRate;
+    public float spawnRate, easySpawnRate, normalSpawnRate, highSpawnRate;
     public GameObject[] objectPrefab;
     public Transform spawnPoint;
     public float speed;
     public float direction;
     public float spawnRadius;
+    [HideInInspector] public float startSpawnRate;
 
     private float timer = 0f;
+
+    void Start()
+    {
+        if (PlayerPrefs.GetString("Difficulty") != null)
+        {
+            switch (PlayerPrefs.GetString("Difficulty"))
+            {
+                case "easy":
+                    spawnRate = easySpawnRate;
+                    break;
+                case "normal":
+                    spawnRate = normalSpawnRate;
+                    break;
+                case "hard":
+                    spawnRate = highSpawnRate;
+                    break;
+                case "godlike":
+                    spawnRate = highSpawnRate;
+                    break;
+            }
+            Debug.Log("Animal spawn rate set from PlayerPrefs: " + spawnRate);
+        }
+        startSpawnRate = spawnRate;
+
+        timer = Time.time + spawnRate + Random.Range(-1f, 1f);
+    }
 
     void Update()
     {
         if (Time.time >= timer)
         {
             SpawnObject();
-            timer = Time.time + spawnRate + Random.Range(-3f, 3f);
+            timer = Time.time + spawnRate + Random.Range(-1f, 1f);
         }
     }
 

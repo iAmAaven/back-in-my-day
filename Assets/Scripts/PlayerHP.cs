@@ -4,39 +4,65 @@ using UnityEngine;
 
 public class PlayerHP : MonoBehaviour
 {
-    public int maxHealth = 5; // Maximum health points
+    public int maxHealth, maxHealthEasy = 8, maxHealthNormal = 5, maxHealthHard = 3, maxHealthGodlike = 1; // Maximum health points
     public int currentHealth; // Current health points
     public GameObject deadPlayerPrefab;
     public SpriteRenderer playerGraphics;
+    public AudioSource hurtAudio;
+    public AudioClip[] audioClips;
+    public HPBar hPBar;
+
+    private LevelHandler levelHandler;
     private bool isAughFrames = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        levelHandler = FindObjectOfType<LevelHandler>();
+        hPBar = FindObjectOfType<HPBar>();
         // Initialize current health to maximum health
+        if (PlayerPrefs.GetString("Difficulty") != null)
+        {
+            Debug.Log("Set difficulty from PlayerPrefs: " + PlayerPrefs.GetString("Difficulty"));
+
+            switch (PlayerPrefs.GetString("Difficulty"))
+            {
+                case "easy":
+                    maxHealth = maxHealthEasy;
+                    break;
+                case "normal":
+                    maxHealth = maxHealthNormal;
+                    break;
+                case "hard":
+                    maxHealth = maxHealthHard;
+                    break;
+                case "godlike":
+                    maxHealth = maxHealthGodlike;
+                    break;
+            }
+        }
+
         currentHealth = maxHealth;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        hPBar.CreateHPBar(maxHealth);
     }
 
     // Function to deal damage to the player
     public void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount;
-        Debug.Log("currentHealth: " + currentHealth);
-        // Check if the player is dead
-        if (currentHealth <= 0)
+        if (!isAughFrames && levelHandler.levelHasBeenCompleted == false)
         {
-            Die();
-        }
+            currentHealth -= damageAmount;
+            hPBar.UpdateHPBar(currentHealth);
+            // Check if the player is dead
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
 
-        if (!isAughFrames)
-        {
+            hurtAudio.clip = audioClips[Random.Range(0, audioClips.Length)];
+            hurtAudio.Play();
+
             StartCoroutine(AughFrames());
         }
     }
@@ -46,8 +72,7 @@ public class PlayerHP : MonoBehaviour
     {
         // Implement player death behavior here
         Debug.Log("Player died");
-        Camera.main.GetComponent<AudioListener>().enabled = true;
-        FindObjectOfType<LevelHandler>().LevelGameOver();
+        levelHandler.LevelGameOver();
         Instantiate(deadPlayerPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
         // You can reset player position, show game over screen, etc.

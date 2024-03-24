@@ -25,13 +25,13 @@ Transform:
   m_GameObject: {fileID: 2096709149578444619}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.947, y: 0.063, z: 0.0000000037252903}
+  m_LocalPosition: {x: 1, y: 0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5804097721380060400}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7154448408331084640
+--- !u!1 &4171579759747948490
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,43 +39,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5804097721380060400}
-  - component: {fileID: 7080563958765563308}
-  - component: {fileID: 4753569971341738695}
-  - component: {fileID: 1819370146534009670}
-  - component: {fileID: 4346151014562664085}
-  - component: {fileID: 5941582652807109352}
-  - component: {fileID: 8453578457610656074}
+  - component: {fileID: 5688734546455377231}
+  - component: {fileID: 2081878868620693397}
   m_Layer: 0
-  m_Name: SouljaBoi L
+  m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5804097721380060400
+--- !u!4 &5688734546455377231
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7154448408331084640}
+  m_GameObject: {fileID: 4171579759747948490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.84, y: -5.45, z: 0.039660756}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8636782599031139116}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 5804097721380060400}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7080563958765563308
+--- !u!212 &2081878868620693397
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7154448408331084640}
+  m_GameObject: {fileID: 4171579759747948490}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -121,6 +115,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!1 &7154448408331084640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5804097721380060400}
+  - component: {fileID: 4753569971341738695}
+  - component: {fileID: 1819370146534009670}
+  - component: {fileID: 4346151014562664085}
+  - component: {fileID: 5941582652807109352}
+  - component: {fileID: 8453578457610656074}
+  m_Layer: 0
+  m_Name: SouljaBoi L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5804097721380060400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154448408331084640}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.84, y: -5.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8636782599031139116}
+  - {fileID: 5688734546455377231}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4753569971341738695
 Rigidbody2D:
   serializedVersion: 4
@@ -161,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
+  destroyOnHit: 0
 --- !u!114 &4346151014562664085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,8 +243,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.013353588, y: 0.0000000015918715}
-  m_Size: {x: 1.7823682, y: 1.2348042}
+  m_Offset: {x: 0.019867403, y: -0.15866734}
+  m_Size: {x: 1.7800004, y: 0.7249194}
   m_Direction: 1
 --- !u!82 &8453578457610656074
 AudioSource:
@@ -225,7 +258,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -6468525158097748986, guid: f440f3ad11e6e3e4cbccc9e402c4bfb5, type: 2}
   m_audioClip: {fileID: 8300000, guid: cd3f29d2ca5a1704a8946d6a34ce7b3e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

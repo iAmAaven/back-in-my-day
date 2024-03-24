@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 6ba767c281c5ad142b7e4e978b027895
   - enabled: 1
-    path: Assets/Scenes/LelleHoo.unity
-    guid: 40783da8d911441c9a50f01483873151
+    path: Assets/Scenes/IntroScene.unity
+    guid: 094482d1fe076684bbdd8e567f13f2f0
   - enabled: 1
     path: Assets/Scenes/Karvakeisari.unity
-    guid: 4b17375fcfb5eb94bb0b11b8fe35247a
+    guid: 3a23349a768e2ee4d97cdaf0b3cc8fd0
+  - enabled: 1
+    path: Assets/Scenes/LelleHoo.unity
+    guid: 40783da8d911441c9a50f01483873151
   - enabled: 1
     path: Assets/Scenes/Aaven.unity
     guid: 3f26994ab124b31479592eae68c6b8dc
@@ -23,4 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JungleOverScene.unity
     guid: 86028d8e655d67f4090ccaf8839ea684
+  - enabled: 1
+    path: Assets/Scenes/BalloonOverScene.unity
+    guid: 0570fac92b73b024aac6a5b2e4afe9e0
+  - enabled: 1
+    path: Assets/Scenes/SkiOverScene.unity
+    guid: 299a1009f50f0294a8f9ee8c0fad4080
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 8d1d45c7bde023945abf5146b2b28ec3
+  - enabled: 1
+    path: Assets/Scenes/OutroScene.unity
+    guid: d27ea1501bd8fc741a88414f38d152bf
   m_configObjects: {}

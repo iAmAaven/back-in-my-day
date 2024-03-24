@@ -8,6 +8,7 @@ TagManager:
   - OneHitEnemy
   - OneShotAudio
   - MinigunBullet
+  - PlayerTarget
   layers:
   - Default
   - TransparentFX

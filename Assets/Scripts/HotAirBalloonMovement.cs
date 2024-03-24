@@ -9,32 +9,50 @@ public class HotAirBalloonMovement : MonoBehaviour
 
     public float terminalvelocity = 20f;
     public Animator balloonAnim;
+    public float gravityScale = 0.5f;
 
     private Rigidbody2D rb;
+    private IsPlaying isPlaying;
     private float horizontalMove;
+    private bool isGoingUp = false;
 
     void Start()
     {
+        isPlaying = FindObjectOfType<IsPlaying>();
         rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component
     }
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal");
+        if (isPlaying.isGamePlaying)
+            horizontalMove = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetButton("Up"))
+        {
+            balloonAnim.SetBool("IsRising", true);
+            isGoingUp = true;
+        }
+        else
+        {
+            balloonAnim.SetBool("IsRising", false);
+            isGoingUp = false;
+        }
     }
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontalMove * moveSpeed, rb.velocity.y);
-
-        // Check for input to move the balloon up
-        if (Input.GetButton("Up") && rb.velocity.y <= terminalvelocity)
+        if (isPlaying.isGamePlaying == false)
         {
-            rb.velocity = new Vector2(rb.velocity.x, upForce);
-            balloonAnim.SetBool("IsRising", true);
+            rb.gravityScale = 0f;
         }
-
-        if (Input.GetButtonUp("Up"))
+        else
         {
-            balloonAnim.SetBool("IsRising", false);
+            rb.gravityScale = gravityScale;
+            rb.velocity = new Vector2(horizontalMove * moveSpeed, rb.velocity.y);
+
+            // Check for input to move the balloon up
+            if (isGoingUp && rb.velocity.y <= terminalvelocity)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, upForce);
+            }
         }
     }
 }

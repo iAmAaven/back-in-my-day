@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class HPBar : MonoBehaviour
 {
-    public GameObject[] hearts;
+    public PlayerHP playerHP;
+    public List<GameObject> hearts = new List<GameObject>();
+    public GameObject blueHeart, pinkHeart;
 
-    public void UpdateHPBar()
+    public void CreateHPBar(int maxHP)
     {
-        foreach (GameObject heart in hearts)
+        for (int i = 0; i < maxHP; i++)
         {
-            heart.SetActive(true);
+            if (i % 2 == 0)
+            {
+                hearts.Add(Instantiate(pinkHeart, transform));
+            }
+            else
+            {
+                hearts.Add(Instantiate(blueHeart, transform));
+            }
         }
+    }
+    public void UpdateHPBar(int hp)
+    {
+        hearts[hp].SetActive(false);
     }
 }

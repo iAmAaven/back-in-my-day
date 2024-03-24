@@ -5,16 +5,23 @@ using UnityEngine;
 
 public class DistanceCounter : MonoBehaviour
 {
-    public int distanceToTravel = 360;
-    public float distanceEverySec = 0.5f;
+    public int distanceToTravel = 300;
+    public float distanceEverySec = 0.25f;
+    [HideInInspector] public float startDistanceEverySec;
 
     public TextMeshProUGUI distanceText;
 
     private float timer = 0f;
     [HideInInspector] public bool isPlaying = false;
 
+    void Start()
+    {
+        startDistanceEverySec = distanceEverySec;
+    }
+
     void Update()
     {
+        isPlaying = FindObjectOfType<IsPlaying>().isGamePlaying;
         if (Time.time >= timer && isPlaying)
         {
             TakeDistance();
