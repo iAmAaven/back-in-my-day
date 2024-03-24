@@ -7,6 +7,7 @@ public class DMGToPlayerOnTrigger : MonoBehaviour
     public int damageToPlayer = 1;
     public AudioClip[] audioClips;
     private AudioSource oneShotAudioSource;
+    public bool destroyOnTrigger = true;
 
     void Start()
     {
@@ -20,12 +21,16 @@ public class DMGToPlayerOnTrigger : MonoBehaviour
             collider.gameObject.GetComponent<PlayerHP>().TakeDamage(damageToPlayer);
 
             PlayAudio();
-            Destroy(gameObject);
+
+            if (destroyOnTrigger)
+                Destroy(gameObject);
         }
         else if (collider.gameObject.tag == "Machete")
         {
             PlayAudio();
-            Destroy(gameObject);
+
+            if (destroyOnTrigger)
+                Destroy(gameObject);
         }
     }
 

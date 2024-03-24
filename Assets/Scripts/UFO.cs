@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class UFO : MonoBehaviour
 {
     public float moveToPointSpeed;
+    public float warningTime, godlikeWarningTime;
     public float followSpeed;
-    public float attackEverySec = 10f, attackCooldown = 5f;
+    public float attackRate = 10f, godlikeAttackRate, attackLength = 5f, godlikeAttackLength;
     public float firstAttackAfterSec = 4f;
     public Transform stopPoint;
     private Transform playerPos;
     public Animator ufoAnim;
+    public Light2D light2D;
+    public float targetIntensity = 5f;
 
     private bool isAttacking = false;
     private bool waitedForFirstAttack = false;
@@ -20,7 +24,22 @@ public class UFO : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerPos = GameObject.FindWithTag("Player").transform;
+        if (GameObject.FindWithTag("PlayerTarget"))
+        {
+            playerPos = GameObject.FindWithTag("PlayerTarget").transform;
+        }
+
+        firstAttackAfterSec = Time.time + firstAttackAfterSec;
+
+        if (PlayerPrefs.GetString("Difficulty") != null)
+        {
+            if (PlayerPrefs.GetString("Difficulty") == "godlike")
+            {
+                attackRate = godlikeAttackRate;
+                attackLength = godlikeAttackLength;
+                warningTime = godlikeWarningTime;
+            }
+        }
     }
 
     void Update()
@@ -33,7 +52,7 @@ public class UFO : MonoBehaviour
             if (Time.time >= timer && waitedForFirstAttack)
             {
                 StartCoroutine(Shoot());
-                timer = Time.time + attackEverySec;
+                timer = Time.time + attackRate + Random.Range(-1f, 1f);
             }
 
             if (Time.time >= firstAttackAfterSec && waitedForFirstAttack == false)
@@ -58,13 +77,38 @@ public class UFO : MonoBehaviour
     IEnumerator Shoot()
     {
         isAttacking = true;
-        yield return new WaitForSeconds(1f);
+        StartCoroutine(SmoothIntensityChange());
+
+        yield return new WaitForSeconds(warningTime);
 
         ufoAnim.SetBool("IsAttacking", true);
 
-        yield return new WaitForSeconds(-1f + attackCooldown);
+        yield return new WaitForSeconds(attackLength);
 
         ufoAnim.SetBool("IsAttacking", false);
         isAttacking = false;
+        ResetLight();
+    }
+
+    void ResetLight()
+    {
+        light2D.intensity = 0f;
+    }
+
+    private IEnumerator SmoothIntensityChange()
+    {
+        float currentIntensity;
+        float timer2 = 0f;
+
+        while (timer2 < warningTime)
+        {
+            timer2 += Time.deltaTime;
+            currentIntensity = Mathf.Lerp(0f, targetIntensity, timer2 / warningTime);
+            light2D.intensity = currentIntensity;
+            yield return null; // Wait for the next frame
+        }
+
+        // Ensure we reach the target intensity exactly
+        light2D.intensity = targetIntensity;
     }
 }

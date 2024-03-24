@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 47402356ee3f5df4dad3ea9cc5d84ce3
+=======
+guid: abf841b9c56b8ff48b2f23e9108ca91c
+>>>>>>> aapo15
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +47,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 1
+=======
+  spriteMode: 2
+>>>>>>> aapo15
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +103,53 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
     sprites: []
+=======
+    sprites:
+    - serializedVersion: 2
+      name: Dragon_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6a24c35bd835447b2fded6b8af2a76
+      internalID: -2090131449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a398b31923fdf40b74b4870a5d23a4
+      internalID: 1497759590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+>>>>>>> aapo15
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +160,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<< HEAD
     nameFileIdTable: {}
+=======
+    nameFileIdTable:
+      Dragon_0: -2090131449
+      Dragon_1: 1497759590
+>>>>>>> aapo15
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

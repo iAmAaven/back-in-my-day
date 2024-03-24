@@ -23,6 +23,7 @@ public class SkiAnimal : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            collider.gameObject.GetComponentInParent<PlayerHP>().TakeDamage(1);
             Debug.Log("Player took damage");
         }
     }
