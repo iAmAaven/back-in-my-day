@@ -6,13 +6,40 @@ public class UFOSpawner : MonoBehaviour
 {
     public GameObject ufoPrefab;
     public Transform spawnPoint, sideStopPoint;
-    public float spawnRate;
+    public float spawnRate, easySpawnRate, normalSpawnRate, highSpawnRate;
     public float spawnRadius;
     public bool ufoFound = false;
-
+    private IsPlaying isPlaying;
     private float timer = 0f;
+
+    void Start()
+    {
+        isPlaying = FindObjectOfType<IsPlaying>();
+        if (PlayerPrefs.GetString("Difficulty") != null)
+        {
+            switch (PlayerPrefs.GetString("Difficulty"))
+            {
+                case "easy":
+                    spawnRate = easySpawnRate;
+                    break;
+                case "normal":
+                    spawnRate = normalSpawnRate;
+                    break;
+                case "hard":
+                    spawnRate = highSpawnRate;
+                    break;
+                case "godlike":
+                    spawnRate = highSpawnRate;
+                    break;
+            }
+            Debug.Log("UFO spawn rate set from PlayerPrefs: " + spawnRate);
+        }
+    }
     void Update()
     {
+        if (isPlaying.isGamePlaying == false)
+            return;
+
         if (FindObjectOfType<UFO>())
         {
             ufoFound = true;

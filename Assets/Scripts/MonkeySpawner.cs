@@ -6,7 +6,9 @@ public class MonkeySpawner : MonoBehaviour
 {
     [Header("Spawn stats")]
     public float spawnRate = 5f;
+    public float easySpawnRate, normalSpawnRate, highSpawnRate;
     public float spawnRadiusX, spawnRadiusY;
+    public int maxAmountOfMonkeys;
 
     [Header("Points")]
     public Transform topSpawnPoint;
@@ -25,6 +27,26 @@ public class MonkeySpawner : MonoBehaviour
     void Start()
     {
         jungleTutorial = FindObjectOfType<JungleTutorial>();
+
+        if (PlayerPrefs.GetString("Difficulty") != null)
+        {
+            switch (PlayerPrefs.GetString("Difficulty"))
+            {
+                case "easy":
+                    spawnRate = easySpawnRate;
+                    break;
+                case "normal":
+                    spawnRate = normalSpawnRate;
+                    break;
+                case "hard":
+                    spawnRate = highSpawnRate;
+                    break;
+                case "godlike":
+                    spawnRate = highSpawnRate;
+                    break;
+            }
+            Debug.Log("Monkey spawn rate set from PlayerPrefs: " + spawnRate + ", difficulty: " + PlayerPrefs.GetFloat("Difficulty"));
+        }
     }
 
     void Update()
@@ -34,7 +56,10 @@ public class MonkeySpawner : MonoBehaviour
 
         if (firstSpawn && Time.time >= timer)
         {
-            SpawnMonkey();
+            if (FindObjectsOfType<Monkey>().Length <= maxAmountOfMonkeys)
+            {
+                SpawnMonkey();
+            }
             timer = Time.time + spawnRate;
         }
         else if (firstSpawn == false)

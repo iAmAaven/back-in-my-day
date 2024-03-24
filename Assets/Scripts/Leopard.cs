@@ -12,6 +12,13 @@ public class Leopard : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Machete")
+        {
+            Destroy(gameObject);
+        }
+    }
     void Update()
     {
         if (transform.position.y - groundPos.position.y < 0.15f)

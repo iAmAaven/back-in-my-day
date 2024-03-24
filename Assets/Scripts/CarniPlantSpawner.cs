@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarniPlantSpawner : MonoBehaviour
 {
     public Transform spawnPoint;
-    public float spawnRate;
+    public float spawnRate, easySpawnRate, normalSpawnRate, highSpawnRate;
     public GameObject[] plantPrefabs;
     private float timer = 0f;
     private JungleTutorial jungleTutorial;
@@ -13,6 +13,25 @@ public class CarniPlantSpawner : MonoBehaviour
     void Start()
     {
         jungleTutorial = FindObjectOfType<JungleTutorial>();
+
+        if (PlayerPrefs.GetString("Difficulty") != null)
+        {
+            switch (PlayerPrefs.GetString("Difficulty"))
+            {
+                case "easy":
+                    spawnRate = easySpawnRate;
+                    break;
+                case "normal":
+                    spawnRate = normalSpawnRate;
+                    break;
+                case "hard":
+                    spawnRate = highSpawnRate;
+                    break;
+                case "godlike":
+                    spawnRate = highSpawnRate;
+                    break;
+            }
+        }
     }
 
     void Update()
@@ -23,7 +42,7 @@ public class CarniPlantSpawner : MonoBehaviour
         if (Time.time >= timer)
         {
             SpawnCarniPlant();
-            timer = Time.time + spawnRate;
+            timer = Time.time + spawnRate + Random.Range(-1f, 1f);
         }
     }
 

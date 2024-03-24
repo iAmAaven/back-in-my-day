@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!1107 &-4336654628890175362
 AnimatorStateMachine:
   serializedVersion: 6
@@ -45,13 +46,20 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
 --- !u!1102 &2454541154633814279
+=======
+--- !u!1102 &-2248968392790019859
+>>>>>>> aapo15
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: FireCottage1
+=======
+  m_Name: cottageOnFire
+>>>>>>> aapo15
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

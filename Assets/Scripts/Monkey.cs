@@ -9,7 +9,7 @@ public class Monkey : MonoBehaviour
 
     [Header("Attack info")]
     public GameObject[] throwableObjects;
-    public float throwingTimer;
+    public float throwingTimer, godlikeThrowingTimer;
     public float throwSpeed;
 
     [Header("Behaviour")]
@@ -33,6 +33,14 @@ public class Monkey : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.GetString("Difficulty") != null)
+        {
+            if (PlayerPrefs.GetString("Difficulty") == "godlike")
+            {
+                throwingTimer = godlikeThrowingTimer;
+            }
+        }
+
         monkeyAudio.clip = audioClips[Random.Range(0, audioClips.Length)];
         monkeyAudio.Play();
         jungleMovement = FindObjectOfType<JungleMovement>();
@@ -62,7 +70,7 @@ public class Monkey : MonoBehaviour
             if (isPositioned && Time.time >= timer)
             {
                 ThrowObject();
-                timer = Time.time + throwingTimer + Random.Range(-0.5f, 2f);
+                timer = Time.time + throwingTimer + Random.Range(-1f, 1f);
             }
         }
     }
