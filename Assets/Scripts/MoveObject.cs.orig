@@ -27,7 +27,6 @@ public class MoveObject : MonoBehaviour
     private void Start()
     {
         gameObject.SetActive(false);
-
         distanceCounter = FindObjectOfType<DistanceCounter>();
         rb = GetComponent<Rigidbody2D>();
         universalScrollerSpeed = FindObjectOfType<UniversalScrollerSpeed>();
@@ -52,7 +51,7 @@ public class MoveObject : MonoBehaviour
         doorAnim.Play("cottageOpenDoor");
     }
 
-    private void Update()
+private void Update()
     {
         if (isPlaying == true)
         {
