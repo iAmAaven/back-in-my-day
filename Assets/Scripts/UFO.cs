@@ -5,20 +5,31 @@ using UnityEngine.Rendering.Universal;
 
 public class UFO : MonoBehaviour
 {
+    [Header("Normal attack stats")]
+    public GameObject bulletPrefab;
+    public float basicAttackInterval, basicAttackIntervalGodlike;
+
+    [Header("Behaviour")]
     public float moveToPointSpeed;
-    public float warningTime, godlikeWarningTime;
     public float followSpeed;
+
+    [Header("Special attack stats")]
+    public float warningTime, godlikeWarningTime;
     public float attackRate = 10f, godlikeAttackRate, attackLength = 5f, godlikeAttackLength;
     public float firstAttackAfterSec = 4f;
-    public Transform stopPoint;
-    private Transform playerPos;
-    public Animator ufoAnim;
-    public Light2D light2D;
     public float targetIntensity = 5f;
 
+    [Header("References")]
+    public Transform firePoint;
+    public Transform stopPoint;
+    public Animator ufoAnim;
+    public Light2D light2D;
+
+    private Transform playerPos;
     private bool isAttacking = false;
     private bool waitedForFirstAttack = false;
     private float timer = 0f;
+    private float normalAttackTimer;
     private Rigidbody2D rb;
 
     void Start()
@@ -29,6 +40,7 @@ public class UFO : MonoBehaviour
             playerPos = GameObject.FindWithTag("PlayerTarget").transform;
         }
 
+        normalAttackTimer = Time.time + basicAttackInterval;
         firstAttackAfterSec = Time.time + firstAttackAfterSec;
 
         if (PlayerPrefs.GetString("Difficulty") != null)
@@ -38,6 +50,7 @@ public class UFO : MonoBehaviour
                 attackRate = godlikeAttackRate;
                 attackLength = godlikeAttackLength;
                 warningTime = godlikeWarningTime;
+                basicAttackInterval = basicAttackIntervalGodlike;
             }
         }
     }
@@ -58,6 +71,12 @@ public class UFO : MonoBehaviour
             if (Time.time >= firstAttackAfterSec && waitedForFirstAttack == false)
             {
                 waitedForFirstAttack = true;
+            }
+
+            if (Time.time >= normalAttackTimer)
+            {
+                normalAttackTimer = Time.time + basicAttackInterval;
+                NormalAttack();
             }
         }
     }
@@ -85,6 +104,7 @@ public class UFO : MonoBehaviour
 
         yield return new WaitForSeconds(attackLength);
 
+        normalAttackTimer = Time.time + basicAttackInterval;
         ufoAnim.SetBool("IsAttacking", false);
         isAttacking = false;
         ResetLight();
@@ -110,5 +130,10 @@ public class UFO : MonoBehaviour
 
         // Ensure we reach the target intensity exactly
         light2D.intensity = targetIntensity;
+    }
+
+    void NormalAttack()
+    {
+        Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
     }
 }

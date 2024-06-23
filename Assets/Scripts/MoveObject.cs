@@ -9,7 +9,6 @@ public class MoveObject : MonoBehaviour
     public Animator gfxAnim;
     public Animator doorAnim;
     public GameObject trails;
-    public float speed = 2f;
     public float upwardIncrement = 0.01f; // Amount to move the player upwards
 
     private bool isMoving = false; // Flag to indicate whether the player should start moving upwards
@@ -128,7 +127,9 @@ public class MoveObject : MonoBehaviour
             gfxAnim.SetBool("Started", true);
             isMoving = true;
         }
-
+    }
+    void FixedUpdate()
+    {
         // If the player should start moving, move it upwards
         if (isMoving)
         {
@@ -143,17 +144,15 @@ public class MoveObject : MonoBehaviour
                 isMoving = false;
             }
         }
-    }
-    void FixedUpdate()
-    {
+
         if (isPlaying)
         {
             if (PlayerPrefs.GetInt("InvertedControls") == 0)
             {
+                // Calculate acceleration based on input direction
                 float targetSpeed = moveHorizontal * maxSpeed;
                 float accelerationValue = moveHorizontal != 0 ? acceleration : deceleration;
                 float currentSpeed = Mathf.MoveTowards(rb.velocity.x, targetSpeed, accelerationValue * Time.deltaTime);
-                // Calculate acceleration based on input direction
                 rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
             }
             else

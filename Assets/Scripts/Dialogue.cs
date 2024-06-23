@@ -5,19 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
-    public GameObject nextDialogue;
     public bool isLastDialogue = false;
+    public GameObject nextDialogue;
     public GameObject fadeToBlack;
+    public GameObject lastDialogueBox;
     public AudioSource transitionSound;
+    public Animator zoomAnimator;
     public string nextSceneName;
+    private bool isTransitioning = false;
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && isTransitioning == false)
         {
+            isTransitioning = true;
             if (isLastDialogue)
             {
                 FadeToBlack();
+                if (lastDialogueBox != null)
+                {
+                    lastDialogueBox.SetActive(false);
+                }
             }
             else
             {
@@ -34,6 +42,12 @@ public class Dialogue : MonoBehaviour
         {
             transitionSound.Play();
         }
+
+        if (zoomAnimator != null)
+        {
+            zoomAnimator.SetTrigger("Zoom");
+        }
+
         fadeToBlack.SetActive(true);
 
         Invoke("ChangeScene", 3f);

@@ -58,6 +58,7 @@ public class PlayerHP : MonoBehaviour
             if (currentHealth <= 0)
             {
                 Die();
+                return;
             }
 
             hurtAudio.clip = audioClips[Random.Range(0, audioClips.Length)];

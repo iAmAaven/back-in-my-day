@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6909519405420153122}
   - component: {fileID: 8295675070004677209}
   - component: {fileID: 6959923834510463211}
-  - component: {fileID: 7387479370468081711}
+  - component: {fileID: 5859758644657325554}
   m_Layer: 0
   m_Name: Tree1
   m_TagString: Untagged
@@ -159,8 +159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
---- !u!70 &7387479370468081711
-CapsuleCollider2D:
+  destroyOnHit: 1
+--- !u!60 &5859758644657325554
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -191,6 +192,24 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.076475024, y: -0.9538361}
-  m_Size: {x: 0.39569047, y: 0.89147973}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.22810364, y: -0.63474417}
+      - {x: -0.051314414, y: -0.64141583}
+      - {x: -0.128376, y: -1.1065712}
+      - {x: -0.17962933, y: -1.2143502}
+      - {x: -0.17855209, y: -1.4015263}
+      - {x: 0.40011084, y: -1.4073918}
+      - {x: 0.39573574, y: -1.2348666}
+      - {x: 0.3364439, y: -1.1166315}
+  m_UseDelaunayMesh: 0

@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
+  destroyOnHit: 1
 --- !u!70 &9119537565636033951
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -159,6 +160,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.020857513, y: 0.51774436}
-  m_Size: {x: 2.0221603, y: 1.048412}
+  m_Offset: {x: -0.020857506, y: 0.58198184}
+  m_Size: {x: 2.0221605, y: 0.919937}
   m_Direction: 1

@@ -173,7 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86af152b6e117694ebcc351105c70667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIText: "Kalle Heikkil\xE4"
+  finnishText: "Kalle Heikkil\xE4"
+  englishText: "Kalle Heikkil\xE4"
   endChars: 
   pauseChars: 
   timeBetweenChars: 0.2
@@ -181,6 +182,7 @@ MonoBehaviour:
   pauseAfterPauseChar: 0
   willClose: 0
   closeAfter: 0
+  uIText: "Kalle Heikkil\xE4"
 --- !u!114 &61017075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86af152b6e117694ebcc351105c70667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIText: "Ege \xD6zkan"
+  finnishText: "Ege \xD6zkan"
+  englishText: "Ege \xD6zkan"
   endChars: 
   pauseChars: 
   timeBetweenChars: 0.2
@@ -336,6 +339,7 @@ MonoBehaviour:
   pauseAfterPauseChar: 0
   willClose: 0
   closeAfter: 0
+  uIText: "Ege \xD6zkan"
 --- !u!114 &78172324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,6 +545,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &557540829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557540831}
+  - component: {fileID: 557540830}
+  m_Layer: 0
+  m_Name: LanguageHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &557540830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557540829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ef5cb4499c57d48b590a5235b07be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &557540831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557540829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3140.9092, y: 244.90668, z: 19.676493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -811,7 +859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86af152b6e117694ebcc351105c70667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIText: Anton Markki
+  finnishText: Anton Markki
+  englishText: Anton Markki
   endChars: 
   pauseChars: 
   timeBetweenChars: 0.2
@@ -819,6 +868,7 @@ MonoBehaviour:
   pauseAfterPauseChar: 0
   willClose: 0
   closeAfter: 0
+  uIText: Anton Markki
 --- !u!114 &1141121885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,8 +1137,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 181}
-  m_SizeDelta: {x: 945.9736, y: 172.512}
+  m_AnchoredPosition: {x: 0, y: 180}
+  m_SizeDelta: {x: 300, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1228217909
 CanvasRenderer:
@@ -1387,7 +1437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86af152b6e117694ebcc351105c70667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIText: "Aapo Harjunp\xE4\xE4"
+  finnishText: "Aapo Harjunp\xE4\xE4"
+  englishText: "Aapo Harjunp\xE4\xE4"
   endChars: 
   pauseChars: 
   timeBetweenChars: 0.2
@@ -1395,6 +1446,7 @@ MonoBehaviour:
   pauseAfterPauseChar: 0
   willClose: 0
   closeAfter: 0
+  uIText: "Aapo Harjunp\xE4\xE4"
 --- !u!1 &1853080556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,8 +1482,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 734.3264, y: -472}
-  m_SizeDelta: {x: 407.5015, y: 97.6061}
+  m_AnchoredPosition: {x: 750, y: -450}
+  m_SizeDelta: {x: 400, y: 80.067}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1853080558
 MonoBehaviour:
@@ -1445,14 +1497,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86af152b6e117694ebcc351105c70667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIText: press space to continue
-  endChars: 0000
+  finnishText: "paina space-n\xE4pp\xE4int\xE4"
+  englishText: press space
+  endChars: 
   pauseChars: 
   timeBetweenChars: 0.02
   pauseAfterEndChar: 0
   pauseAfterPauseChar: 0
   willClose: 0
   closeAfter: 0
+  uIText: press space
 --- !u!114 &1853080559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,7 +1527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: press space to continue
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -1691,6 +1745,7 @@ GameObject:
   - component: {fileID: 2072583203}
   - component: {fileID: 2072583205}
   - component: {fileID: 2072583204}
+  - component: {fileID: 2072583206}
   m_Layer: 5
   m_Name: "Tekij\xE4t"
   m_TagString: Untagged
@@ -1714,8 +1769,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 27.5}
+  m_SizeDelta: {x: 0, y: -55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072583204
 MonoBehaviour:
@@ -1737,7 +1792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TEKIJ\xC4T"
+  m_text: CREDITS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -1814,6 +1869,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072583202}
   m_CullTransparentMesh: 1
+--- !u!114 &2072583206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072583202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d23c9bf5339edb43a9d2e8056cf557d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finnishText: "TEKIJ\xC4T"
+  englishText: CREDITS
 --- !u!1 &2104389334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,3 +2011,4 @@ SceneRoots:
   - {fileID: 2104389338}
   - {fileID: 486359598}
   - {fileID: 1959472403}
+  - {fileID: 557540831}

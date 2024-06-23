@@ -147,8 +147,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -94, y: 31}
-  m_SizeDelta: {x: -212.7491, y: 42.2406}
+  m_AnchoredPosition: {x: -48.4904, y: 31}
+  m_SizeDelta: {x: -121.7299, y: 42.2406}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9166875688123406307
 CanvasRenderer:
@@ -267,8 +267,9 @@ GameObject:
   - component: {fileID: 2242281783224995969}
   - component: {fileID: 2873166285221599849}
   - component: {fileID: 7874667611819804104}
+  - component: {fileID: 1291919060585874006}
   m_Layer: 0
-  m_Name: Music
+  m_Name: Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,7 +322,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sfx
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -390,6 +391,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1291919060585874006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549149658958880702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d23c9bf5339edb43a9d2e8056cf557d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finnishText: "\xE4\xE4nitehosteet"
+  englishText: sound effects
 --- !u!1 &624192277554711417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,6 +1586,7 @@ GameObject:
   - component: {fileID: 9188969845515628628}
   - component: {fileID: 8417390725715088226}
   - component: {fileID: 6630744937040156199}
+  - component: {fileID: 3076565969760218833}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -1625,7 +1641,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: music
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -1694,6 +1710,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3076565969760218833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003401289287252662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d23c9bf5339edb43a9d2e8056cf557d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finnishText: musiikki
+  englishText: music
 --- !u!1 &6295031886120153430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,6 +1735,7 @@ GameObject:
   - component: {fileID: 6571261904945334988}
   - component: {fileID: 5056209743582425643}
   - component: {fileID: 6449966749111703491}
+  - component: {fileID: 3334485334191331218}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1759,7 +1790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Volume
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -1786,7 +1817,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1822,12 +1853,26 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 15, y: 0, z: 15, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3334485334191331218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6295031886120153430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d23c9bf5339edb43a9d2e8056cf557d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finnishText: "\xC4\xE4niasetukset"
+  englishText: Volume
 --- !u!1 &6730684507808919891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,6 +2323,7 @@ GameObject:
   - component: {fileID: 2893333762310435431}
   - component: {fileID: 8197515328458360889}
   - component: {fileID: 6367848318580084328}
+  - component: {fileID: 3801401350162091510}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2332,7 +2378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BACK TO MENU
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -2395,12 +2441,26 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 15, y: 0, z: 15, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3801401350162091510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838056031073707478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d23c9bf5339edb43a9d2e8056cf557d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finnishText: "P\xC4\xC4VALIKKOON"
+  englishText: BACK TO MENU
 --- !u!1 &8005136050467331308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,6 +2650,7 @@ GameObject:
   - component: {fileID: 1755954433500266544}
   - component: {fileID: 4819116412623317640}
   - component: {fileID: 6531890282808650558}
+  - component: {fileID: 6018818542758313575}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2644,7 +2705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -2671,7 +2732,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.5
+  m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2713,3 +2774,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6018818542758313575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869973333586744103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d23c9bf5339edb43a9d2e8056cf557d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finnishText: Takaisin
+  englishText: Back
