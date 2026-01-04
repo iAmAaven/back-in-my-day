@@ -18,7 +18,7 @@ public class HotAirBalloonMovement : MonoBehaviour
 
     void Start()
     {
-        isPlaying = FindObjectOfType<IsPlaying>();
+        isPlaying = FindFirstObjectByType<IsPlaying>();
         rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component
     }
     void Update()
@@ -46,12 +46,12 @@ public class HotAirBalloonMovement : MonoBehaviour
         else
         {
             rb.gravityScale = gravityScale;
-            rb.velocity = new Vector2(horizontalMove * moveSpeed, rb.velocity.y);
+            rb.linearVelocity = new Vector2(horizontalMove * moveSpeed, rb.linearVelocity.y);
 
             // Check for input to move the balloon up
-            if (isGoingUp && rb.velocity.y <= terminalvelocity)
+            if (isGoingUp && rb.linearVelocity.y <= terminalvelocity)
             {
-                rb.velocity = new Vector2(rb.velocity.x, upForce);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, upForce);
             }
         }
     }

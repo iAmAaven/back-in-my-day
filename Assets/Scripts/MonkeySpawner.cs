@@ -26,7 +26,7 @@ public class MonkeySpawner : MonoBehaviour
 
     void Start()
     {
-        jungleTutorial = FindObjectOfType<JungleTutorial>();
+        jungleTutorial = FindFirstObjectByType<JungleTutorial>();
 
         if (PlayerPrefs.GetString("Difficulty") != null)
         {
@@ -56,7 +56,7 @@ public class MonkeySpawner : MonoBehaviour
 
         if (firstSpawn && Time.time >= timer)
         {
-            if (FindObjectsOfType<Monkey>().Length <= maxAmountOfMonkeys)
+            if (FindObjectsByType<Monkey>(FindObjectsSortMode.None).Length <= maxAmountOfMonkeys)
             {
                 SpawnMonkey();
             }

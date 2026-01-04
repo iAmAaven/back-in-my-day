@@ -13,7 +13,7 @@ public class TallBush : MonoBehaviour
     void Start()
     {
         oneShotAudioSource = GameObject.FindWithTag("OneShotAudio").GetComponent<AudioSource>();
-        jungleTutorial = FindObjectOfType<JungleTutorial>();
+        jungleTutorial = FindFirstObjectByType<JungleTutorial>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -21,7 +21,7 @@ public class TallBush : MonoBehaviour
     {
         if (jungleTutorial.isTutorialOn)
             return;
-        rb.velocity = Vector2.left * moveSpeed;
+        rb.linearVelocity = Vector2.left * moveSpeed;
     }
 
     void OnTriggerEnter2D(Collider2D collider)

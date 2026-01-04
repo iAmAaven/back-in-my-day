@@ -18,7 +18,7 @@ public class JungleTreeSpawner : MonoBehaviour
 
     void Start()
     {
-        jungleTutorial = FindObjectOfType<JungleTutorial>();
+        jungleTutorial = FindFirstObjectByType<JungleTutorial>();
     }
 
     void Update()
@@ -40,7 +40,7 @@ public class JungleTreeSpawner : MonoBehaviour
         float randomScale = Random.Range(minScale, maxScale);
         newTree.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
 
-        newTree.GetComponent<Rigidbody2D>().velocity = Vector2.left * layerSpeed;
+        newTree.GetComponent<Rigidbody2D>().linearVelocity = Vector2.left * layerSpeed;
 
         SpriteRenderer treeSprite = newTree.GetComponentInChildren<SpriteRenderer>();
         treeSprite.sortingOrder = orderInLayer;

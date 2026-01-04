@@ -85,11 +85,11 @@ public class UFO : MonoBehaviour
     {
         if (transform.position.x - stopPoint.position.x > 0.01f)
         {
-            rb.velocity = Vector2.left * moveToPointSpeed;
+            rb.linearVelocity = Vector2.left * moveToPointSpeed;
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
     }
 

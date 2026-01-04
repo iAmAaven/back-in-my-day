@@ -12,9 +12,9 @@ public class CottageBeginningScreen : MonoBehaviour
 
     void Start()
     {
-        tutorial = FindObjectOfType<JungleTutorial>();
-        player = FindObjectOfType<MoveObject>();
-        spawner = FindObjectOfType<EnableAfterIntro>();
+        tutorial = FindFirstObjectByType<JungleTutorial>();
+        player = FindFirstObjectByType<MoveObject>();
+        spawner = FindFirstObjectByType<EnableAfterIntro>();
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class CottageBeginningScreen : MonoBehaviour
         // Check if the player pressed spacebar to start moving the sprite
         if (tutorial.isTutorialOn == false && cottageIsMoving == false && player.gameObject.activeSelf && Input.GetButtonDown("Fire1"))
         {
-            FindObjectOfType<IsPlaying>().isGamePlaying = true;
+            FindFirstObjectByType<IsPlaying>().isGamePlaying = true;
             cottageIsMoving = true;
             fireSpawner.SetActive(true);
         }

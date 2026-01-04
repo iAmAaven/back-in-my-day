@@ -16,7 +16,7 @@ public class CarniPlant : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        jungleTutorial = FindObjectOfType<JungleTutorial>();
+        jungleTutorial = FindFirstObjectByType<JungleTutorial>();
         carniSound = GetComponentInParent<AudioSource>();
     }
 
@@ -38,7 +38,7 @@ public class CarniPlant : MonoBehaviour
     {
         if (jungleTutorial.isTutorialOn)
             return;
-        rb.velocity = Vector2.left * moveSpeed;
+        rb.linearVelocity = Vector2.left * moveSpeed;
     }
 
     void OnTriggerEnter2D(Collider2D collider)

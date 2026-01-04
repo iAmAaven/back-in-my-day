@@ -43,7 +43,7 @@ public class Monkey : MonoBehaviour
 
         monkeyAudio.clip = audioClips[Random.Range(0, audioClips.Length)];
         monkeyAudio.Play();
-        jungleMovement = FindObjectOfType<JungleMovement>();
+        jungleMovement = FindFirstObjectByType<JungleMovement>();
 
         if (isTopMonkey)
         {

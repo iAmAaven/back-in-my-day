@@ -34,7 +34,7 @@ public class ObstacleSpawner : MonoBehaviour
             }
         }
 
-        isPlaying = FindObjectOfType<IsPlaying>();
+        isPlaying = FindFirstObjectByType<IsPlaying>();
 
         while (true)
         {
@@ -49,7 +49,7 @@ public class ObstacleSpawner : MonoBehaviour
 
                 // Move obstacle from right to left
                 Rigidbody2D rb = obstacle.GetComponent<Rigidbody2D>();
-                rb.velocity = new Vector2(-speed, Random.Range(-1f, 1f));
+                rb.linearVelocity = new Vector2(-speed, Random.Range(-1f, 1f));
             }
 
             yield return new WaitForSeconds(spawnRate);

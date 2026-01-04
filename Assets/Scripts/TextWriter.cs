@@ -23,7 +23,6 @@ public class TextWriter : MonoBehaviour
     private TextMeshProUGUI textMesh;
     private string processedText;
     [HideInInspector] public string uIText;
-    private LanguageHandler languageHandler;
 
     void Start()
     {
@@ -36,7 +35,6 @@ public class TextWriter : MonoBehaviour
             uIText = finnishText;
         }
 
-        languageHandler = FindObjectOfType<LanguageHandler>();
         textMesh = GetComponent<TextMeshProUGUI>();
         StartCoroutine(TypeText());
     }

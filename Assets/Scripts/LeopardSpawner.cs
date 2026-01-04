@@ -15,7 +15,7 @@ public class LeopardSpawner : MonoBehaviour
 
     void Start()
     {
-        jungleTutorial = FindObjectOfType<JungleTutorial>();
+        jungleTutorial = FindFirstObjectByType<JungleTutorial>();
         if (PlayerPrefs.GetString("Difficulty") != null)
         {
             switch (PlayerPrefs.GetString("Difficulty"))

@@ -19,8 +19,8 @@ public class PlayerHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelHandler = FindObjectOfType<LevelHandler>();
-        hPBar = FindObjectOfType<HPBar>();
+        levelHandler = FindFirstObjectByType<LevelHandler>();
+        hPBar = FindFirstObjectByType<HPBar>();
         // Initialize current health to maximum health
         if (PlayerPrefs.GetString("Difficulty") != null)
         {

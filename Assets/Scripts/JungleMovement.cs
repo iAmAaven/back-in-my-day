@@ -25,7 +25,7 @@ public class JungleMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        jungleTutorial = FindObjectOfType<JungleTutorial>();
+        jungleTutorial = FindFirstObjectByType<JungleTutorial>();
     }
 
     void Update()
@@ -45,11 +45,11 @@ public class JungleMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.velocity = Vector2.up * jumpForce;
+            rb.linearVelocity = Vector2.up * jumpForce;
         }
-        else if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        else if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
 
         if (isGrounded)
@@ -86,7 +86,7 @@ public class JungleMovement : MonoBehaviour
             return;
 
         float speed = moveSpeed * movement;
-        rb.velocity = new Vector2(speed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
     }
 
     void OnDrawGizmosSelected()

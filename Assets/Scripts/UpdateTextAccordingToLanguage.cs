@@ -13,7 +13,7 @@ public class UpdateTextAccordingToLanguage : MonoBehaviour
     void Start()
     {
         textMesh = GetComponent<TextMeshProUGUI>();
-        languageHandler = FindObjectOfType<LanguageHandler>();
+        languageHandler = FindFirstObjectByType<LanguageHandler>();
     }
 
     void Update()

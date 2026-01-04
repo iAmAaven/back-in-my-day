@@ -15,7 +15,7 @@ public class PlatformGeneration : MonoBehaviour
 
     void Start()
     {
-        jungleTutorial = FindObjectOfType<JungleTutorial>();
+        jungleTutorial = FindFirstObjectByType<JungleTutorial>();
     }
 
     void Update()
@@ -38,7 +38,7 @@ public class PlatformGeneration : MonoBehaviour
 
         GameObject newPlatform = Instantiate(platformPrefab, randomPos, Quaternion.identity);
 
-        newPlatform.GetComponent<Rigidbody2D>().velocity = new Vector2(-platformMoveSpeed, 0);
+        newPlatform.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-platformMoveSpeed, 0);
     }
 
     void OnDrawGizmosSelected()
