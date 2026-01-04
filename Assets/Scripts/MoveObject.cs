@@ -9,7 +9,6 @@ public class MoveObject : MonoBehaviour
     public Animator gfxAnim;
     public Animator doorAnim;
     public GameObject trails;
-    public float speed = 2f;
     public float upwardIncrement = 0.01f; // Amount to move the player upwards
 
     private bool isMoving = false; // Flag to indicate whether the player should start moving upwards
@@ -28,9 +27,9 @@ public class MoveObject : MonoBehaviour
     {
         gameObject.SetActive(false);
 
-        distanceCounter = FindObjectOfType<DistanceCounter>();
+        distanceCounter = FindFirstObjectByType<DistanceCounter>();
         rb = GetComponent<Rigidbody2D>();
-        universalScrollerSpeed = FindObjectOfType<UniversalScrollerSpeed>();
+        universalScrollerSpeed = FindFirstObjectByType<UniversalScrollerSpeed>();
 
         if (universalScrollerSpeed != null)
         {
@@ -63,8 +62,8 @@ public class MoveObject : MonoBehaviour
                 universalScrollerSpeed.universalSpeed = originalSpeed / 2;
                 if (changedObstacleSpeed == false)
                 {
-                    obstacleGenerators = FindObjectsOfType<ObstaclesSkiBelow>();
-                    animalGenerators = FindObjectsOfType<MooseDiagonal>();
+                    obstacleGenerators = FindObjectsByType<ObstaclesSkiBelow>(FindObjectsSortMode.None);
+                    animalGenerators = FindObjectsByType<MooseDiagonal>(FindObjectsSortMode.None);
 
                     foreach (ObstaclesSkiBelow obstacleGenerator in obstacleGenerators)
                     {
@@ -86,8 +85,8 @@ public class MoveObject : MonoBehaviour
 
                 if (changedObstacleSpeed == true)
                 {
-                    obstacleGenerators = FindObjectsOfType<ObstaclesSkiBelow>();
-                    animalGenerators = FindObjectsOfType<MooseDiagonal>();
+                    obstacleGenerators = FindObjectsByType<ObstaclesSkiBelow>(FindObjectsSortMode.None);
+                    animalGenerators = FindObjectsByType<MooseDiagonal>(FindObjectsSortMode.None);
 
                     foreach (ObstaclesSkiBelow obstacleGenerator in obstacleGenerators)
                     {
@@ -105,12 +104,12 @@ public class MoveObject : MonoBehaviour
                 }
             }
 
-            if (rb.velocity.x < -1f)
+            if (rb.linearVelocity.x < -1f)
             {
                 playerAnim.SetBool("isTurningRight", true);
                 playerAnim.SetBool("isTurningLeft", false);
             }
-            else if (rb.velocity.x > 1f)
+            else if (rb.linearVelocity.x > 1f)
             {
                 playerAnim.SetBool("isTurningRight", false);
                 playerAnim.SetBool("isTurningLeft", true);
@@ -123,12 +122,14 @@ public class MoveObject : MonoBehaviour
         }
 
         // Check if the player pressed the spacebar to start moving upwards
-        if (isMoving == false && Input.GetButtonDown("Fire1") && FindObjectOfType<JungleTutorial>().isTutorialOn == false)
+        if (isMoving == false && Input.GetButtonDown("Fire1") && FindFirstObjectByType<JungleTutorial>().isTutorialOn == false)
         {
             gfxAnim.SetBool("Started", true);
             isMoving = true;
         }
-
+    }
+    void FixedUpdate()
+    {
         // If the player should start moving, move it upwards
         if (isMoving)
         {
@@ -143,26 +144,24 @@ public class MoveObject : MonoBehaviour
                 isMoving = false;
             }
         }
-    }
-    void FixedUpdate()
-    {
+
         if (isPlaying)
         {
             if (PlayerPrefs.GetInt("InvertedControls") == 0)
             {
+                // Calculate acceleration based on input direction
                 float targetSpeed = moveHorizontal * maxSpeed;
                 float accelerationValue = moveHorizontal != 0 ? acceleration : deceleration;
-                float currentSpeed = Mathf.MoveTowards(rb.velocity.x, targetSpeed, accelerationValue * Time.deltaTime);
-                // Calculate acceleration based on input direction
-                rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
+                float currentSpeed = Mathf.MoveTowards(rb.linearVelocity.x, targetSpeed, accelerationValue * Time.deltaTime);
+                rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
             }
             else
             {
                 // Calculate acceleration based on input direction
                 float targetSpeed = moveHorizontal * -maxSpeed;
                 float accelerationValue = moveHorizontal != 0 ? acceleration : deceleration;
-                float currentSpeed = Mathf.MoveTowards(rb.velocity.x, targetSpeed, accelerationValue * Time.deltaTime);
-                rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
+                float currentSpeed = Mathf.MoveTowards(rb.linearVelocity.x, targetSpeed, accelerationValue * Time.deltaTime);
+                rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
             }
         }
     }

@@ -12,11 +12,11 @@ public class SkiObject : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        universalScrollerSpeed = FindObjectOfType<UniversalScrollerSpeed>();
+        universalScrollerSpeed = FindFirstObjectByType<UniversalScrollerSpeed>();
     }
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(0, universalScrollerSpeed.universalSpeed);
+        rb.linearVelocity = new Vector2(0, universalScrollerSpeed.universalSpeed);
     }
 
     void OnTriggerEnter2D(Collider2D collider)

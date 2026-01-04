@@ -14,7 +14,7 @@ public class JungleTutorial : MonoBehaviour
         {
             if (startsIsPlaying)
             {
-                FindObjectOfType<IsPlaying>().isGamePlaying = true;
+                FindFirstObjectByType<IsPlaying>().isGamePlaying = true;
             }
             tutorialCanvas.SetActive(false);
             Invoke("TutorialDisableOnTimer", 0.05f);

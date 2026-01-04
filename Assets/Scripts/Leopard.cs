@@ -28,6 +28,6 @@ public class Leopard : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rb.velocity = Vector2.left * moveSpeed;
+        rb.linearVelocity = Vector2.left * moveSpeed;
     }
 }

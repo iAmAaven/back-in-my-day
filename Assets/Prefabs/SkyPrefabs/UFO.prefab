@@ -326,6 +326,37 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &4133505154268886502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4300312949577749850}
+  m_Layer: 0
+  m_Name: Firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4300312949577749850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4133505154268886502}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8020400386442349729}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7173424702093770229
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +658,7 @@ Transform:
   - {fileID: 2143242801469545789}
   - {fileID: 3783343015518562526}
   - {fileID: 3813662237646365151}
+  - {fileID: 4300312949577749850}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5076430267239056835
@@ -641,19 +673,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f498ae6d3c841439cfeb21a21c348a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 758097913715557979, guid: 2bc696e7398d0174e8311ef5104899af, type: 3}
+  basicAttackInterval: 2
+  basicAttackIntervalGodlike: 1.25
   moveToPointSpeed: 5
+  followSpeed: 3
   warningTime: 3
   godlikeWarningTime: 1.5
-  followSpeed: 3
-  attackRate: 10
-  godlikeAttackRate: 6
+  attackRate: 12
+  godlikeAttackRate: 7
   attackLength: 2.5
   godlikeAttackLength: 2
   firstAttackAfterSec: 4
+  targetIntensity: 8
+  firePoint: {fileID: 4300312949577749850}
   stopPoint: {fileID: 0}
   ufoAnim: {fileID: 864141092259001892}
   light2D: {fileID: 2400872141250984072}
-  targetIntensity: 8
 --- !u!95 &864141092259001892
 Animator:
   serializedVersion: 5
@@ -751,7 +787,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHitPoints: 60
   enemyGFX: {fileID: 3823488473923589853}
-  deathAudio: {fileID: 8300000, guid: 2e597d14c1ffce44aa42d86a03233987, type: 3}
+  deathAudioVolume: 1
+  deathAudio: {fileID: 8300000, guid: e6e1fe6c7a532744abc913c2db88c807, type: 3}
 --- !u!114 &3090721015277755329
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,10 +13,6 @@ public class GameOverMenu : MonoBehaviour
         {
             TryAgain();
         }
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            GoToMenu();
-        }
     }
 
     public void TryAgain()

@@ -37,7 +37,7 @@ public class MooseDiagonal : MonoBehaviour
         }
         startSpawnRate = spawnRate;
 
-        timer = Time.time + spawnRate + Random.Range(-1f, 1f);
+        timer = Time.time + spawnRate + Random.Range(-1.75f, 1.5f);
     }
 
     void Update()
@@ -45,7 +45,7 @@ public class MooseDiagonal : MonoBehaviour
         if (Time.time >= timer)
         {
             SpawnObject();
-            timer = Time.time + spawnRate + Random.Range(-1f, 1f);
+            timer = Time.time + spawnRate + Random.Range(-1.75f, 1.5f);
         }
     }
 

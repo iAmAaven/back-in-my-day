@@ -25,7 +25,7 @@ public class Dragon : MonoBehaviour
     {
         hitCollider.enabled = false;
         currentEndPoint = leftEndPoint;
-        isPlaying = FindObjectOfType<IsPlaying>();
+        isPlaying = FindFirstObjectByType<IsPlaying>();
     }
     void Update()
     {

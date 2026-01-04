@@ -13,6 +13,6 @@ public class MinigunBullet : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rb.velocity = Vector2.right * bulletSpeed;
+        rb.linearVelocity = Vector2.right * bulletSpeed;
     }
 }

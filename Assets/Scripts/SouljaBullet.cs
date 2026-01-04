@@ -12,11 +12,11 @@ public class SouljaBullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        universalScrollerSpeed = FindObjectOfType<UniversalScrollerSpeed>();
+        universalScrollerSpeed = FindFirstObjectByType<UniversalScrollerSpeed>();
     }
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveSpeed * moveDirection, universalScrollerSpeed.universalSpeed);
+        rb.linearVelocity = new Vector2(moveSpeed * moveDirection, universalScrollerSpeed.universalSpeed);
     }
 
     void OnTriggerEnter2D(Collider2D collider)

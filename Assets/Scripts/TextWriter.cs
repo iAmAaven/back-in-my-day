@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class TextWriter : MonoBehaviour
 {
-    [TextArea] public string uIText;
+    [TextArea] public string finnishText;
+    [TextArea] public string englishText;
     public char[] endChars;
     public char[] pauseChars;
 
@@ -21,9 +22,19 @@ public class TextWriter : MonoBehaviour
     // PRIVATES
     private TextMeshProUGUI textMesh;
     private string processedText;
+    [HideInInspector] public string uIText;
 
     void Start()
     {
+        if (PlayerPrefs.GetString("Language") != null)
+        {
+            UpdateLanguageToText();
+        }
+        else
+        {
+            uIText = finnishText;
+        }
+
         textMesh = GetComponent<TextMeshProUGUI>();
         StartCoroutine(TypeText());
     }
@@ -50,6 +61,23 @@ public class TextWriter : MonoBehaviour
         {
             yield return new WaitForSeconds(closeAfter);
             gameObject.SetActive(false);
+        }
+    }
+
+    public void UpdateLanguageToText()
+    {
+        if (PlayerPrefs.GetString("Language") != null)
+        {
+            switch (PlayerPrefs.GetString("Language"))
+            {
+                case "finnish":
+                    uIText = finnishText;
+                    break;
+
+                case "english":
+                    uIText = englishText;
+                    break;
+            }
         }
     }
 }

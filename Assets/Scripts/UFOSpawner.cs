@@ -14,7 +14,7 @@ public class UFOSpawner : MonoBehaviour
 
     void Start()
     {
-        isPlaying = FindObjectOfType<IsPlaying>();
+        isPlaying = FindFirstObjectByType<IsPlaying>();
         if (PlayerPrefs.GetString("Difficulty") != null)
         {
             switch (PlayerPrefs.GetString("Difficulty"))
@@ -40,7 +40,7 @@ public class UFOSpawner : MonoBehaviour
         if (isPlaying.isGamePlaying == false)
             return;
 
-        if (FindObjectOfType<UFO>())
+        if (FindFirstObjectByType<UFO>())
         {
             ufoFound = true;
             return;

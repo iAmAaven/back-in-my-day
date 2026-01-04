@@ -19,7 +19,7 @@ public class CloudSpawner : MonoBehaviour
 
     void Start()
     {
-        jungleTutorial = FindObjectOfType<JungleTutorial>();
+        jungleTutorial = FindFirstObjectByType<JungleTutorial>();
     }
 
     void Update()
@@ -44,7 +44,7 @@ public class CloudSpawner : MonoBehaviour
         float randomScale = Random.Range(minScale, maxScale);
         newCloud.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
 
-        newCloud.GetComponent<Rigidbody2D>().velocity = Vector2.left * layerSpeed;
+        newCloud.GetComponent<Rigidbody2D>().linearVelocity = Vector2.left * layerSpeed;
 
         SpriteRenderer cloudSprite = newCloud.GetComponentInChildren<SpriteRenderer>();
         cloudSprite.sortingOrder = orderInLayer;

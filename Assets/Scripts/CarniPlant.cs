@@ -5,17 +5,19 @@ using UnityEngine;
 public class CarniPlant : MonoBehaviour
 {
     public float moveSpeed = 7f;
-    public float attackRate;
+    public float prepareAttackAfter;
+    public float attackWait;
     public Animator carniAnim;
-    public AudioSource carniSound;
+    private AudioSource carniSound;
     private Rigidbody2D rb;
-    private float timer = 0f;
     private JungleTutorial jungleTutorial;
+    private bool isAttacking = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        jungleTutorial = FindObjectOfType<JungleTutorial>();
+        jungleTutorial = FindFirstObjectByType<JungleTutorial>();
+        carniSound = GetComponentInParent<AudioSource>();
     }
 
     void Update()
@@ -23,21 +25,20 @@ public class CarniPlant : MonoBehaviour
         if (jungleTutorial.isTutorialOn)
             return;
 
-        if (Time.time >= timer)
+        if (isAttacking == false && Time.time >= prepareAttackAfter)
         {
             if (carniAnim != null)
             {
-                Attack();
+                PrepareAttack();
+                isAttacking = true;
             }
-
-            timer = Time.time + attackRate;
         }
     }
     void FixedUpdate()
     {
         if (jungleTutorial.isTutorialOn)
             return;
-        rb.velocity = Vector2.left * moveSpeed;
+        rb.linearVelocity = Vector2.left * moveSpeed;
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -46,14 +47,18 @@ public class CarniPlant : MonoBehaviour
             Destroy(gameObject);
     }
 
-    void Attack()
+    void PrepareAttack()
     {
-        carniAnim.SetTrigger("Attack");
-        Invoke("PlayAudio", 1f);
+        carniAnim.SetTrigger("GettingReady");
+        Invoke("Attack", Random.Range(attackWait - .5f, attackWait + .5f));
     }
 
-    void PlayAudio()
+    void Attack()
     {
-        carniSound.Play();
+        if (carniSound != null)
+        {
+            carniSound.Play();
+        }
+        carniAnim.SetTrigger("Attack");
     }
 }

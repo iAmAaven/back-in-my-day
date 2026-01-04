@@ -12,7 +12,7 @@ public class CarniPlantSpawner : MonoBehaviour
 
     void Start()
     {
-        jungleTutorial = FindObjectOfType<JungleTutorial>();
+        jungleTutorial = FindFirstObjectByType<JungleTutorial>();
 
         if (PlayerPrefs.GetString("Difficulty") != null)
         {

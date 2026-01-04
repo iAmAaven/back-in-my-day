@@ -21,7 +21,7 @@ public class DistanceCounter : MonoBehaviour
 
     void Update()
     {
-        isPlaying = FindObjectOfType<IsPlaying>().isGamePlaying;
+        isPlaying = FindFirstObjectByType<IsPlaying>().isGamePlaying;
         if (Time.time >= timer && isPlaying)
         {
             TakeDistance();
@@ -38,7 +38,7 @@ public class DistanceCounter : MonoBehaviour
         }
         else
         {
-            FindObjectOfType<LevelHandler>().LevelEnd();
+            FindFirstObjectByType<LevelHandler>().LevelEnd();
         }
     }
 }

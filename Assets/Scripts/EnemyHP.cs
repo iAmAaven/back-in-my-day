@@ -8,6 +8,7 @@ public class EnemyHP : MonoBehaviour
     public int enemyHitPoints;
     public SpriteRenderer enemyGFX;
     private bool isAughFrames = false;
+    public float deathAudioVolume = 0.3f;
     public AudioClip deathAudio;
     private AudioSource audioSource;
 
@@ -56,7 +57,7 @@ public class EnemyHP : MonoBehaviour
     {
         if (deathAudio != null)
         {
-            audioSource.volume = 0.3f;
+            audioSource.volume = deathAudioVolume;
             audioSource.clip = deathAudio;
             audioSource.Play();
         }
